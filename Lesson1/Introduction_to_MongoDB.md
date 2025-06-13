@@ -18,6 +18,10 @@ MongoDB addresses these limitations:
 
 ### MongoDB Architecture & Ecosystem
 Understanding MongoDB's core components is essential:
+<p align="center">
+  <img src="L1_Assests/MongoDB Architecture & Ecosystem - visual selection.png" alt="Core Concept" width="60%" />
+</p>
+
 * **Mongod:** The primary database process that handles data requests, manages storage, and performs core database operations. This is the server.
 * **Mongos:** In a **sharded cluster**, `mongos` acts as a query router, directing client queries to the appropriate data shards.
 * **Mongo:** The interactive JavaScript shell used by developers and administrators to interact directly with the database, execute commands, and perform queries.
