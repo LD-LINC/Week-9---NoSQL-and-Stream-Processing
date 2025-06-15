@@ -53,6 +53,11 @@ At its heart, Kafka can be thought of as a **distributed commit log**. This mean
     ├── Partition 0 [Record 0, Record 1, Record 2, ...]
     └── Partition 1 [Record 0, Record 1, Record 2, ...]
     ```
+<p align="center">
+  <img src="L2_Assests/Kafka System.PNG" alt="Core Concept" width="60%" />
+</p>
+
+
 
 ### Producers
 
