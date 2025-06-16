@@ -4,11 +4,18 @@
 
 ## 1.1 Motivation for NoSQL
 
+## Different Database Types
+<p align="center">
+  <img src="L1_Assests/DataBase_Types.png" alt="Core Concept" width="60%" />
+</p>
+
+
 ### Limitations of RDBMS in Big Data
 
 For decades, **Relational Database Management Systems (RDBMS)** like MySQL, PostgreSQL, Oracle, and SQL Server have served as the backbone of enterprise applications. They excel at managing structured data, ensuring transactional integrity (ACID properties), and performing complex queries using SQL.
 
 However, the emergence of **"big data"**—characterized by its high volume, velocity, and variety—highlighted several limitations of RDBMS:
+
 
 * **Scalability Challenges:** RDBMS typically scale vertically by increasing the power of a single server. This approach eventually hits physical and cost limitations. Horizontal scaling, distributing data across multiple servers, is complex and often inefficient in RDBMS.
 * **Schema Rigidity:** RDBMS requires a predefined schema, meaning tables, columns, and data types must be defined before data insertion. This rigidity hinders agility when data requirements change rapidly or when dealing with diverse, evolving data formats, such as social media feeds or sensor data.
