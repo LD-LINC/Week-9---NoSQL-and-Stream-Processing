@@ -10,12 +10,9 @@ Kafka's popularity stems from its ability to address common challenges in data i
 
 **Benefits:**
 
-  * **High Throughput:** Capable of handling millions of messages per second.
-  * **Scalability:** Horizontally scalable, allowing you to add more brokers as your data volume grows.
-  * **Durability & Fault-Tolerance:** Messages are persisted to disk and replicated across multiple brokers, ensuring data is not lost even if a broker fails.
-  * **Real-time Processing:** Enables immediate processing of data as it arrives, crucial for real-time analytics and reactive applications.
-  * **Decoupling:** Producers and consumers are decoupled, meaning they don't need to know about each other, simplifying system architecture.
-  * **Retainability:** Kafka can retain messages for a configurable period, allowing consumers to re-read data from the past.
+<p align="center">
+  <img src="Benefits of Kafka - visual selection.png" alt="Benefits of Kafka" width="80%" />
+</p>
 
 **Use Cases:**
 
