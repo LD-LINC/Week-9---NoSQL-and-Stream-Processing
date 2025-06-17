@@ -4,6 +4,11 @@
 The exponential growth of data generated from digital sources such as applications, IoT devices, social media, and transactional systems presents a significant engineering challenge. The effective storage of this "big data" is a critical foundation for any data-driven organization.
 
 The core challenges of big data are commonly defined by the "5 Vs":
+
+  <p align="center">
+  <img src="L3_Assets/5V.png" alt="Core Concept" width="60%" />
+</p>
+
 * **Volume**: Pertains to the massive scale of the data, often measured in petabytes and exabytes.
 * **Velocity**: Refers to the high rate at which data is generated and ingested.
 * **Variety**: Describes the diverse nature of the data, which can be structured, semi-structured, or unstructured.
