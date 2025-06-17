@@ -1,4 +1,4 @@
-## Lesson2:  Introduction to Kafka
+## Lesson 2:  Introduction to Kafka
 
 ### What is Kafka?
 
