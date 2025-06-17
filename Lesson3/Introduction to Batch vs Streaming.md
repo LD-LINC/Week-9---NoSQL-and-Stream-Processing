@@ -16,6 +16,12 @@ Data processing is fundamental to almost every business operation. Let's look at
 
 * **Dashboarding:** A sales manager needs to see how their team is performing. They want a dashboard showing daily sales figures, top-selling products, and regional performance. This dashboard doesn't just magically appear; it's fed by processed sales data, often aggregated from various sources and transformed into a format suitable for visualization.
 
+## Batch Processing vs Stream Processing
+
+  <p align="center">
+  <img src="L3_Assets/Batch_vs_Stream.PNG" alt="Core Concept" width="60%" />
+</p>
+
 ## Batch Processing
 
 ### Definition
