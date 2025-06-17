@@ -16,7 +16,7 @@ Data processing is fundamental to almost every business operation. Let's look at
 
 * **Dashboarding:** A sales manager needs to see how their team is performing. They want a dashboard showing daily sales figures, top-selling products, and regional performance. This dashboard doesn't just magically appear; it's fed by processed sales data, often aggregated from various sources and transformed into a format suitable for visualization.
 
-## 📌 Batch Processing
+## Batch Processing
 
 ### Definition
 
@@ -41,7 +41,7 @@ Batch processing is a method of processing data in large chunks or "batches" at 
 * **Apache Spark (Batch mode):** Spark is a powerful unified analytics engine for large-scale data processing. While it can do much more, its core RDD (Resilient Distributed Dataset) API and DataFrame API are extensively used for efficient batch processing of structured and unstructured data.
 * **SQL-based ETL tools (e.g., Talend, Informatica – optional mention):** These tools are widely used for Extract, Transform, Load (ETL) operations, which are often batch-oriented. They provide graphical interfaces to design data pipelines that move and transform data from various sources into data warehouses or other destinations.
 
-## 📌 Stream Processing
+## Stream Processing
 
 ### Definition
 
