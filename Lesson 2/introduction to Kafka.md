@@ -9,9 +9,8 @@ Apache Kafka is an open-source distributed streaming platform that enables you t
 Kafka's popularity stems from its ability to address common challenges in data integration and processing. Here are some key benefits and typical use cases:
 
 **Benefits:**
-
 <p align="center">
-  <img src="Lesson 2/L2_Assests/Benefits of Kafka - visual selection.png" alt="Benefits of Kafka" width="80%" />
+  <img src="L2_Assests/Benefits of Kafka - visual selection.png" alt="Benefits of Kafka" width="80%" />
 </p>
 
 **Use Cases:**
