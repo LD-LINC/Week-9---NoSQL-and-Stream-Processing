@@ -11,7 +11,7 @@ Kafka's popularity stems from its ability to address common challenges in data i
 **Benefits:**
 
 <p align="center">
-  <img src="Benefits of Kafka - visual selection.png" alt="Benefits of Kafka" width="80%" />
+  <img src="L2_Assets/Benefits of Kafka - visual selection.png" alt="Benefits of Kafka" width="80%" />
 </p>
 
 **Use Cases:**
