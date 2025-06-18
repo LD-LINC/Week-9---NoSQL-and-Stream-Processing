@@ -33,7 +33,7 @@ Big Data storage technologies are broadly classified based on their architecture
 
 ---
 
-### **3. In-Depth: Distributed File Systems (DFS)**
+### **3. Distributed File Systems (DFS)**
 
 A Distributed File System abstracts a network of multiple machines to present a single, logical file system to the user.
 
@@ -49,7 +49,7 @@ HDFS is the foundational storage layer of the Hadoop ecosystem, designed for hig
 
 ---
 
-### **4. In-Depth: NoSQL Databases**
+### **4. NoSQL Databases**
 
 The term NoSQL ("Not Only SQL") refers to a class of databases designed to handle data models and scaling characteristics that traditional relational database management systems (RDBMS) do not. They excel at managing semi-structured or unstructured data and support horizontal scaling.
 
@@ -61,7 +61,7 @@ The term NoSQL ("Not Only SQL") refers to a class of databases designed to handl
 
 ---
 
-### **5. In-Depth: Object Storage**
+### **5. Object Storage**
 
 Object storage is an architecture that manages data as distinct units, or objects, rather than as files in a hierarchy or as blocks on a disk.
 
@@ -79,7 +79,7 @@ Object storage is an architecture that manages data as distinct units, or object
 
 ---
 
-### **6. In-Depth: Data Lakes**
+### **6. Data Lakes**
 
 A Data Lake is a centralized repository designed to store vast quantities of structured, semi-structured, and unstructured data at any scale.
 
@@ -90,7 +90,7 @@ A Data Lake is a centralized repository designed to store vast quantities of str
 
 ---
 
-### **7. Case Study: Netflix's Data Storage Architecture**
+### ** Netflix's Data Storage Architecture**
 
 Netflix employs a sophisticated, polyglot persistence strategy to manage data for its global streaming service.
 
