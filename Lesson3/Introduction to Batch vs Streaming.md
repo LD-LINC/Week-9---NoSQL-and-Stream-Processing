@@ -1,4 +1,4 @@
-# Batch vs. Stream Processing: A Data Engineering Deep Dive
+# Batch vs. Stream Processing
 
 ## Introduction
 
@@ -233,18 +233,18 @@ if __name__ == "__main__":
 4.  In a separate terminal, run a Kafka producer (e.g., the conceptual producer code above, or use `kafka-console-producer.sh`).
 
 
-## Case Study: Leveraging Batch and Stream Processing at Netflix
+## Case Study: Leveraging Batch and Stream Processing at Amazon Prime Video
 
-**Company:** Netflix
+**Company:** Amazon
 
 **Industry:** Entertainment/Media Streaming
 
 **Overview:**
-Netflix, a global leader in streaming entertainment, processes an astronomical amount of data daily. This data ranges from user viewing history and UI interactions to system logs and billing information. To effectively manage and leverage this diverse data for personalized recommendations, operational efficiency, and business intelligence, Netflix employs a sophisticated data processing architecture that strategically combines both **batch** and **stream processing**.
+Amazon, a global leader in streaming entertainment, processes an astronomical amount of data daily. This data ranges from user viewing history and UI interactions to system logs and billing information. To effectively manage and leverage this diverse data for personalized recommendations, operational efficiency, and business intelligence, Amazon employs a sophisticated data processing architecture that strategically combines both **batch** and **stream processing**.
 
 ---
 
-**Challenges Faced by Netflix:**
+**Challenges Faced by Amazon:**
 
 1.  **Massive Data Volume & Velocity:** Billions of events (clicks, plays, pauses, searches, errors) occur daily from millions of users worldwide. This data needs to be ingested and processed efficiently.
 2.  **Real-time Personalization:** Users expect immediate and highly relevant content recommendations. Delays in processing viewing habits can lead to a degraded user experience.
@@ -254,9 +254,9 @@ Netflix, a global leader in streaming entertainment, processes an astronomical a
 
 ---
 
-**How Netflix Utilizes Batch Processing:**
+**How Amazon Utilizes Batch Processing:**
 
-**Batch processing** at Netflix is primarily used for tasks that do not require immediate, real-time insights but involve large volumes of historical data for in-depth analysis.
+**Batch processing** at Amazon is primarily used for tasks that do not require immediate, real-time insights but involve large volumes of historical data for in-depth analysis.
 
 * **Use Cases:**
     * **Billing and Financial Reporting:** Daily or monthly aggregation of subscriber data, payment processing, and generation of financial reports. This typically happens during off-peak hours to minimize impact on real-time systems.
@@ -265,43 +265,41 @@ Netflix, a global leader in streaming entertainment, processes an astronomical a
     * **Data Warehousing and ETL (Extract, Transform, Load):** Consolidating data from various sources into a central data warehouse for business intelligence and long-term analysis. This often involves nightly or weekly batch jobs.
     * **Archiving and Data Backups:** Periodically backing up critical data and archiving old data for compliance and historical reference.
 
-* **Technologies (Historical/Examples):** While Netflix has evolved its internal tools, traditionally, for batch processing, they have leveraged technologies like:
+* **Technologies (Historical/Examples):** While Amazon has evolved its internal tools, traditionally, for batch processing, they have leveraged technologies like:
     * **Apache Hadoop MapReduce:** For distributed processing of large datasets.
     * **Apache Spark (Batch Mode):** For high-performance batch processing and complex data transformations.
     * **Custom-built data pipelines:** Designed for specific batch workloads.
 
 ---
 
-**How Netflix Utilizes Stream Processing:**
+**How Amazon Utilizes Stream Processing:**
 
-**Stream processing** is vital for Netflix's real-time operations, where immediate action or insights are required based on continuously flowing data.
+**Stream processing** is vital for Amazon's real-time operations, where immediate action or insights are required based on continuously flowing data.
 
 * **Use Cases:**
-    * **Real-time Personalization and Recommendations:** As a user interacts with the Netflix platform (Browse, searching, playing a title), these events are processed in real-time to update their viewing context and provide highly relevant recommendations on the fly.
-    * **A/B Test Evaluation:** Real-time monitoring of user engagement and performance metrics for ongoing A/B tests to quickly determine the impact of new features or UI changes.
+    * **Real-time Personalization and Recommendations:** As a user interacts with the Amazon platform (Browse, searching, playing a title), these events are processed in real-time to update their viewing context and provide highly relevant recommendations on the fly.   
     * **Operational Monitoring and Alerting:** Ingesting system logs, error messages, and performance metrics from thousands of servers and microservices to detect anomalies, outages, or performance bottlenecks in real-time and trigger automated alerts.
     * **Fraud Detection:** While not as prominent as in financial services, monitoring account activity for suspicious patterns to prevent unauthorized access or sharing.
     * **Quality of Experience (QoE) Monitoring:** Analyzing real-time streaming metrics (buffering, resolution changes, playback errors) to dynamically adjust streaming quality and optimize the user's viewing experience.
     * **Clickstream Analysis:** Understanding user navigation paths on the website and app in real-time to optimize UI/UX and identify popular features.
 
-* **Technologies (Historical/Current Examples):** Netflix has been a pioneer in developing and adopting stream processing technologies:
+* **Technologies (Historical/Current Examples):** Amazon has been a pioneer in developing and adopting stream processing technologies:
     * **Apache Kafka:** Used as a highly scalable and fault-tolerant distributed streaming platform for ingesting and publishing real-time event data. It acts as the central nervous system for many of their streaming pipelines.
-    * **Apache Flink / Apache Samza / Netflix Mantis (Internal):** These are stream processing engines that consume data from Kafka (or similar message brokers) and perform real-time transformations, aggregations, and computations. Netflix's internal "**Mantis**" is a prominent example of a bespoke real-time stream processing platform that handles both batch and streaming internally, unifying their data processing.
-    * **Custom-built services:** For specific real-time decision-making logic.
-
+    * **Apache Flink / Apache Samza:** These are stream processing engines that consume data from Kafka (or similar message brokers) and perform real-time transformations, aggregations, and computations. 
+   
 ---
 
 **Synergy and Benefits of the Hybrid Approach:**
 
-Netflix's success lies in its intelligent combination of both batch and stream processing.
+Amazon's success lies in its intelligent combination of both batch and stream processing.
 
 * **Optimized Resource Utilization:** Batch jobs can be scheduled during off-peak hours, making efficient use of computing resources. Stream processing systems are always-on but designed for low-latency, high-throughput operations on smaller, continuous data flows.
 * **Comprehensive Data Insights:** Batch processing provides the historical context and deep analytical capabilities for long-term trends and strategic decisions, while stream processing offers immediate, actionable insights for tactical adjustments and real-time user experiences.
 * **Robustness and Fault Tolerance:** Data is often ingested into streaming systems (like Kafka) first, providing a durable log of events. This allows for reprocessing of data in batch if needed (e.g., for correcting errors or re-running analysis with new logic), providing a safety net.
-* **Scalability:** Both approaches are designed for horizontal scalability, allowing Netflix to handle ever-increasing data volumes and user demands.
+* **Scalability:** Both approaches are designed for horizontal scalability, allowing Amazon to handle ever-increasing data volumes and user demands.
 
 ---
 
 **Conclusion:**
 
-Netflix's sophisticated data architecture serves as a prime example of how a leading technology company effectively integrates both **batch** and **stream processing**. By leveraging each approach for its strengths – batch for historical analysis and heavy computation, and stream for real-time personalization and operational monitoring – Netflix delivers a highly responsive, personalized, and robust entertainment experience to its global audience. This hybrid strategy is crucial for maintaining their competitive edge in the dynamic streaming market.
+Amazon's sophisticated data architecture serves as a prime example of how a leading technology company effectively integrates both **batch** and **stream processing**. By leveraging each approach for its strengths – batch for historical analysis and heavy computation, and stream for real-time personalization and operational monitoring – Amazon delivers a highly responsive, personalized, and robust entertainment experience to its global audience. This hybrid strategy is crucial for maintaining their competitive edge in the dynamic streaming market.
