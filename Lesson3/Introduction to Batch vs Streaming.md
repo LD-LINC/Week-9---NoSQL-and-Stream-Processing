@@ -83,7 +83,7 @@ Stream processing is a method of processing data continuously as it arrives, in 
 | **Processing Style** | Collect then process          | Process as it arrives         |
 | **Data Boundness** | Bounded (finite)              | Unbounded (infinite)          |
 
-## Demo or Activity
+## Activity
 
 ### Simple Python Batch Script vs. Kafka Consumer Script
 
