@@ -246,7 +246,8 @@ The core decision in MongoDB schema design:
     * **Cons:** Requires multiple queries (`$lookup` for joins), non-atomic operations across documents.
     * **When to use:** One-to-many or many-to-many relationships, frequently updated data, large or unbounded embedded arrays.
  
-      
+   ---
+     
 # 2. Case Study: MongoDB's Transformative Role at GlobalConnect
 
 ## A. Introduction
@@ -288,6 +289,8 @@ The strategic adoption of MongoDB brought substantial improvements to GlobalConn
 ## F. Conclusion
 GlobalConnect's experience underscores MongoDB's power as a key enabler for modern, agile software development and scalable data management. By thoughtfully integrating MongoDB into their architecture for use cases demanding flexibility and horizontal scalability, GlobalConnect not only overcame critical database limitations but also positioned itself for continued rapid innovation and sustained growth in a competitive SaaS market. MongoDB proved to be a pivotal technology in their journey towards a more adaptable and high-performing platform. 
 
+---
+
 # 3. Activities
 
 ### Activity 1. Advanced Querying and Projections
@@ -312,7 +315,84 @@ GlobalConnect's experience underscores MongoDB's power as a key enabler for mode
 
 **D. Oscar-Nominated Dramas with a Specific Number of Nominations:**
  - Find movies that are Oscar-nominated, are of the "Drama" genre, and have received between 5 and 10 (inclusive) Oscar nominations.
- - Sort the results by year in ascending order.
- - Limit the results to the first five movies found.
- - Display `title`, `year`, `isOscarNominated`, `genres`, and `awards.nominations`.
+   
+---
+
+ ### Activity 2. Intermediate Aggregation Pipeline
+
+**Objective:** This activity will further develop your aggregation skills by combining multiple pipeline stages to derive meaningful insights from the dataset.
+
+**Instructions:** [Download Movie Dataset CSV](./L1_Assests/Movie%20Dataset.csv)
+
+**A. Directors by Average Rotten Tomatoes Score (Top 3):**
+ - Calculate the average Rotten Tomatoes rating for each director.
+ - Filter out directors who have fewer than 2 movies in the dataset.
+ - Sort the results by the average Rotten Tomatoes rating in descending order.
+ - Limit the output to the top 3 directors.
+
+**B. Oscar-Winning Movies by Decade:**
+ - Group movies by the decade they were released (e.g., 1990s, 2000s).
+ - Count how many Oscar-winning movies `(awards.oscarsWon > 0)` fall into each decade.
+ - Also, calculate the total number of Oscar wins for each decade.
+ - Sort the decades in ascending order.
+
+**C. Top 5 Actors by Total IMDb Rating of Their Movies:**
+ - Unwind the cast array to treat each actor's movie as a separate document.
+ - Group by actor and calculate the sum of IMDb ratings for all movies they've been in.
+ - Sort by the total IMDb rating in descending order.
+ - Limit to the top 5 actors.
+
+---
+
+ ### Activity 3. Personal Blog System
+
+**Objective:** To design and implement a simple MongoDB-based database to manage a personal blog system, using the structure and content provided in the post.csv file. The system should allow efficient storage, retrieval, and management of blog posts, including metadata such as title, author, content, tags, and timestamps. The goal is to transition from a flat CSV data format to a structured, queryable, and scalable NoSQL data model using MongoDB, thereby enhancing data organization and supporting future blog application development.
+
+**Instructions:** 
+ - [Download Movie Dataset CSV](./L1_Assests/Movie%20Dataset.csv)
+ - Based on the following data model, create two collections in MongoDB: posts and comments. Use the field definitions to structure your documents accordingly.
+
+***posts Collection Fields:***
+```js
+{
+  _id: ObjectID, // MongoDB's default ObjectID
+  title: String,
+  content: String,
+  author: String,
+  tags: [String], // e.g., ["MongoDB", "NoSQL", "Tutorial"]
+  publishedDate: Date,
+  status: String, // e.g., "draft", "published"
+  views: Number // default to 0
+}
+```
+***comments Collection Fields:***
+
+```js
+{
+  _id: ObjectID, // MongoDB's default ObjectID
+  postId: ObjectID, // Reference to the _id of the related post
+  author: String,
+  commentText: String,
+  commentDate: Date
+}
+```
+**Tasks**
+
+**A. Data Insertion:**
+ - Insert CSV data into the `posts` collection.
+ - For one post, insert 2–3 sample comments into the `comments` collection, ensuring `postId` correctly references the `_id` of that post.
+
+**B. Querying Posts:**
+ - Find all published posts.
+ - Find posts with a specific tag (e.g., "MongoDB").
+ - Find posts published in a specific year.
+ - Find the title and author of all posts, sorted by `publishedDate descending`.
+
+**C. Updating Posts:**
+ - Change the status of a draft post to published.
+ - Increment the views count for a specific post.
+
+**D. Aggregations:**
+ - Count the total number of posts by each author.
+ - Find the post with the most views.
 
