@@ -249,10 +249,10 @@ The core decision in MongoDB schema design:
       
 # 2. Case Study: MongoDB's Transformative Role at GlobalConnect
 
-## 1. Introduction
-GlobalConnect, a leading global SaaS provider offering a suite of collaboration and project management tools, faced escalating challenges with its traditional relational database infrastructure. As their user base expanded and the demand for more dynamic, personalized features grew, their existing SQL database struggled to keep pace, leading to performance bottlenecks and hindering rapid feature deployment. This case study details GlobalConnect's decision to integrate MongoDB into their data architecture to address these issues, ultimately achieving superior data flexibility, scalability, and developer agility.
+## A. Introduction
+Consider a fictional company 'GlobalConnect', a leading global SaaS provider offering a suite of collaboration and project management tools, faced escalating challenges with its traditional relational database infrastructure. As their user base expanded and the demand for more dynamic, personalized features grew, their existing SQL database struggled to keep pace, leading to performance bottlenecks and hindering rapid feature deployment. This case study details GlobalConnect's decision to integrate MongoDB into their data architecture to address these issues, ultimately achieving superior data flexibility, scalability, and developer agility.
 
-## 2. The Challenge: Relational Database Limitations for Evolving Data
+## B. The Challenge: Relational Database Limitations for Evolving Data
 GlobalConnect's primary application relied on a large, centralized MySQL database. While robust for initial needs, its limitations became apparent with rapid growth:
 
 - **Schema Evolution Pains**: The highly structured schema of MySQL made it cumbersome to introduce new features that required varying data attributes, such as custom user fields, dynamic project metadata, or diverse document types. Each change necessitated time-consuming schema migrations and downtime.
@@ -260,7 +260,7 @@ GlobalConnect's primary application relied on a large, centralized MySQL databas
 - **Performance for Dynamic Queries**: Features requiring flexible querying across diverse user data, like personalized dashboards or advanced search functionalities, often resulted in slow query performance due to complex joins on large tables.
 - **Developer Velocity**: Developers spent significant time working around schema rigidity, often normalizing data that would be more naturally represented as nested documents, slowing down the development of new features and product iterations.
 
-## 3. The Solution: Embracing MongoDB for Data Agility
+## C. The Solution: Embracing MongoDB for Data Agility
 After evaluating various NoSQL options, GlobalConnect strategically adopted MongoDB, a document-oriented database, for several key components of their platform, primarily focusing on user profiles, project configurations, and flexible content storage. The decision was based on MongoDB's strengths:
 
 - **Flexible Schema**: MongoDB's document model allowed GlobalConnect to store data in a more natural, nested format, directly mapping to their application objects. This eliminated the need for rigid schema definitions, enabling rapid iteration on features with evolving data requirements.
@@ -268,7 +268,7 @@ After evaluating various NoSQL options, GlobalConnect strategically adopted Mong
 - **High Performance for Dynamic Data**: Queries on nested documents were often faster and more efficient than complex joins in a relational database, particularly for retrieving aggregate information or specific subsets of diverse data.
 - **Developer Familiarity**: MongoDB's JSON-like document structure resonated well with their developer teams already working with JSON in their application layer, shortening the learning curve and improving productivity.
 
-## 4. Implementation Strategy
+## D. Implementation Strategy
 GlobalConnect followed a careful, phased implementation approach:
 
 - **Initial Pilot (User Profiles)**: They began by migrating the user profile management system to MongoDB. This allowed them to immediately experience the benefits of a flexible schema for custom user attributes and preferences.
@@ -276,7 +276,7 @@ GlobalConnect followed a careful, phased implementation approach:
 - **Microservices Integration**: As GlobalConnect moved towards a microservices architecture, MongoDB naturally fit into this paradigm, allowing individual services to own and manage their specific data models within MongoDB collections.
 - **Operational Readiness**: Comprehensive monitoring, backup, and disaster recovery strategies were put in place for the MongoDB clusters, along with internal training for operations teams.
 
-## 5. Results and Transformative Benefits
+## E. Results and Transformative Benefits
 The strategic adoption of MongoDB brought substantial improvements to GlobalConnect's platform and development process:
 
 - **Unprecedented Data Flexibility**: New features requiring diverse data structures could be developed and deployed in days rather than weeks, as schema changes were no longer a bottleneck. This significantly accelerated product innovation.
@@ -285,7 +285,34 @@ The strategic adoption of MongoDB brought substantial improvements to GlobalConn
 - **Increased Developer Productivity**: Developers reported a significant boost in productivity, spending less time on data modeling and migration concerns and more time on core feature development. The "code-to-data" mapping became much more intuitive.
 - **Reduced Operational Complexity**: While sharding still requires management, MongoDB's native features simplified the process compared to manual sharding solutions for relational databases, leading to more streamlined operations.
 
-## 6. Conclusion
+## F. Conclusion
 GlobalConnect's experience underscores MongoDB's power as a key enabler for modern, agile software development and scalable data management. By thoughtfully integrating MongoDB into their architecture for use cases demanding flexibility and horizontal scalability, GlobalConnect not only overcame critical database limitations but also positioned itself for continued rapid innovation and sustained growth in a competitive SaaS market. MongoDB proved to be a pivotal technology in their journey towards a more adaptable and high-performing platform. 
 
 # 3. Activities
+
+### Activity 1. Advanced Querying and Projections
+
+**Objective:** This activity will challenge you to write more specific and efficient queries using a wider range of MongoDB query operators. You'll also learn to shape your query results using projections.
+
+**Instructions:** Refer to the following dataset - 
+
+**A. Movies with High IMDb and Metacritic Scores:**
+ - Find all movies released after 2010 that have an IMDb rating greater than 8.5 AND a Metacritic score greater than 80.
+ - Only display their title, director, year, and their IMDb and Metacritic ratings.
+
+**B. Movies by Specific Directors or Genres:**
+ - Find movies directed by "Quentin Tarantino" OR "Steven Spielberg".
+ - Additionally, filter these results only to include movies that are either "Sci-Fi" or "Animation" genres.
+ - Show only the title, director, and genres fields.
+   
+**C. Movies with Specific Cast Members (Case-Insensitive) and No Metacritic Score:**
+ - Find movies that feature "Leonardo DiCaprio" OR "Tom Hanks" in the cast (case-insensitive search for names).
+ - Include only movies where the `ratings.metacritic` field exists.
+ - Display title, cast, and `ratings.metacritic`.
+
+**D. Oscar-Nominated Dramas with a Specific Number of Nominations:**
+ - Find movies that are Oscar-nominated, are of the "Drama" genre, and have received between 5 and 10 (inclusive) Oscar nominations.
+ - Sort the results by year in ascending order.
+ - Limit the results to the first five movies found.
+ - Display `title`, `year`, `isOscarNominated`, `genres`, and `awards.nominations`.
+
