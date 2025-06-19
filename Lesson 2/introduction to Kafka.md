@@ -733,9 +733,9 @@ For Java: `kafka-clients`
 
 **Instructions:**
 
-**A. Set up Kafka Producer** 
+A. Set up Kafka Producer
 
-**B. Set up Kafka Consumer**
+B. Set up Kafka Consumer
 
 ---
 
@@ -750,7 +750,7 @@ To build a lightweight e-commerce simulation that demonstrates how Apache Kafka 
 
  - Install Apache Kafka and Zookeeper.
 
- - Create a topic named `orders`.
+ - Create a topic named `orders-topic`.
 
 **B. Create the Order Service (Producer)**
 
