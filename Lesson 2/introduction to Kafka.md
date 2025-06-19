@@ -204,7 +204,7 @@ Let’s assume you're in the extracted Kafka directory for the next steps.
 
 ---
 
-### Starting ZooKeeper
+### A. Starting ZooKeeper
 
 Kafka traditionally uses **ZooKeeper** for coordination tasks. You’ll need to start it before launching Kafka.
 
@@ -216,7 +216,7 @@ This will start ZooKeeper and stream logs in the terminal. Leave this window ope
 
 ---
 
-### Starting Kafka Broker
+### B. Starting Kafka Broker
 
 Now open a **new terminal window** and start the Kafka broker.
 
@@ -228,13 +228,13 @@ Once you see a message like `[KafkaServer id=0] started`, the broker is running 
 
 ---
 
-### Basic CLI Commands
+### C. Basic CLI Commands
 
 Let’s explore how to work with Kafka using its command-line interface.
 
 ---
 
-#### Creating Topics
+#### - Creating Topics
 
 Before producing or consuming messages, you need a topic.
 
@@ -246,7 +246,7 @@ For single-broker setups, keep the replication factor as `1`.
 
 ---
 
-#### Listing Topics
+#### - Listing Topics
 
 To confirm your topic was created:
 
@@ -258,7 +258,7 @@ You should see `my_first_topic` listed.
 
 ---
 
-#### Producing Messages
+#### - Producing Messages
 
 Use the Kafka console producer to send messages to the topic.
 
@@ -278,7 +278,7 @@ Press `Ctrl+C` to stop the producer.
 
 ---
 
-#### Consuming Messages
+#### - Consuming Messages
 
 To read messages from the topic, use the Kafka console consumer.
 
@@ -298,7 +298,7 @@ Keep this window open to see new messages in real-time. Press `Ctrl+C` to exit.
 
 ---
 
-#### Deleting Topics
+#### - Deleting Topics
 
 You can delete a topic after enabling deletion in the Kafka config:
 
@@ -677,7 +677,7 @@ Kafka often sits at the heart of modern data architecture, enabling **streaming-
 
 ---
 
-### Final Thought
+### Conclusion
 
 These real-world case studies showcase how Kafka enables organisations to build systems that are:
 
