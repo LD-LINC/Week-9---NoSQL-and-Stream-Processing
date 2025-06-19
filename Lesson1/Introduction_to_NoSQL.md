@@ -98,6 +98,14 @@ While sometimes referred to as "columnar," these are more accurately "column-fam
 
 Graph databases store data in a graph structure, consisting of **"nodes"** (entities) and **"edges"** (relationships between entities). Both nodes and edges can have properties associated with them. Edges also have a direction (e.g., "Person A FRIENDS Person B").
 
+The following figure represents Nodes with properties from relationships represented by edges.
+
+<p align="center">
+  <img src="L1_Assests/Graph Database.png" alt="Graph Database" width="70%" />
+</p>
+<p align="center">
+Source: Graph Database (Neue Fische, 2025)
+
 * **Optimized for Relationship Queries:** Graph databases excel at traversing complex relationships quickly and efficiently, a task where RDBMS would require complex and slow self-joins.
 * **Examples:** **Neo4j** (the most popular graph database, known for its Cypher query language), **Amazon Neptune**, and **ArangoDB** (a multi-model database).
 * **Use Cases:** Perfect for **social networks, recommendation engines, fraud detection, and knowledge graphs** where understanding complex interconnections is key.
