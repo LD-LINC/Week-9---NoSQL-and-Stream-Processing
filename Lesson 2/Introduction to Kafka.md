@@ -14,7 +14,7 @@ Kafka's popularity stems from its ability to address common challenges in data i
 
 **Benefits:**
 <p align="center">
-  <img src="L2_Assests/Benefits of Kafka - visual selection.png" alt="Benefits of Kafka" width="80%" />
+  <img src="L2_Assests/Benefits of Kafka..png" alt="Benefits of Kafka" width="80%" />
 </p>
 
 **Use Cases:**
@@ -57,7 +57,7 @@ At its heart, Kafka can be thought of as a **distributed commit log**. This mean
 Before diving into the individual components of the Kafka ecosystem, here's a high-level visual overview that illustrates how these core parts—ZooKeeper, Producers, Brokers, and Consumers—interact within the system.
 
 <p align="center">
-  <img src="L2_Assests/Kafka System - visual selection.png" alt="Kafka System Overview" width="60%" />
+  <img src="L2_Assests/Kafka System Cycle..png" alt="Kafka System Overview" width="60%" />
 </p>
 
 ### Producers
@@ -113,7 +113,7 @@ The number of replicas for a topic is called its **replication factor**. A repli
 Beyond the core messaging architecture, Kafka supports several powerful tools and APIs that enhance its functionality. These are essential when building real-time, scalable, and production-ready data solutions.
 
 <p align="center">
-  <img src="L2_Assests/Kafka Tools and Integrations.png" alt="Kafka Tools & Integrations at a Glance" width="80%" />
+  <img src="L2_Assests/Kafka Tools and Integrations..png" alt="Kafka Tools & Integrations at a Glance" width="80%" />
 </p>
 
 ### Kafka Connect
@@ -171,7 +171,7 @@ This hands-on section is ideal for development, experimentation, and understandi
 Here’s a step-by-step view of the full setup process:
 
 <p align="center">
-  <img src="L2_Assests/Kafka Setup and Usage Flowchart.png" alt="Kafka Setup and Usage Flowchart" width="290px" />
+  <img src="L2_Assests/Kafka Setup and Usage Flowchart..png" alt="Kafka Setup and Usage Flowchart" width="290px" />
 </p>
 
 ### Prerequisites (Java)
@@ -344,7 +344,7 @@ Now that you've interacted with Kafka using the command line, let's take the nex
 Python is widely used in data engineering, streaming pipelines, and backend development—making it a popular choice for working with Kafka. We'll use the `kafka-python` library for the examples below.
 
 <p align="center">
-  <img src="L2_Assests/Kafka Message Flow with Python.png" alt="Kafka Message Flow with Python" width="100%" />
+  <img src="L2_Assests/Kafka Message Flow with Python..png" alt="Kafka Message Flow with Python" width="100%" />
 </p>
 
 ---
