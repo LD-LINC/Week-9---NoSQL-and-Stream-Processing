@@ -1,6 +1,6 @@
 ## Lesson 2:  Introduction to Kafka
 
-### What is Kafka?
+### 1. What is Kafka?
 
 Apache Kafka is an open-source distributed streaming platform that enables you to publish, subscribe to, store, and process streams of records in a fault-tolerant way. It's often described as a distributed commit log or a distributed publish-subscribe messaging system. Unlike traditional messaging systems, Kafka is designed for high-throughput, low-latency data ingestion, and processing, making it ideal for real-time data pipelines and streaming applications.
 
@@ -32,7 +32,7 @@ Kafka's popularity stems from its ability to address common challenges in data i
 
 -----
 
-## 2. Kafka Core Concepts & Architecture
+## 1.1. Kafka Core Concepts & Architecture
 
 Understanding Kafka's core concepts is crucial for effective utilization.
 
@@ -108,7 +108,7 @@ The number of replicas for a topic is called its **replication factor**. A repli
 
 -----
 
-## 3. Kafka Tools & Integrations
+## 2. Kafka Tools & Integrations
 
 Beyond the core messaging architecture, Kafka supports several powerful tools and APIs that enhance its functionality. These are essential when building real-time, scalable, and production-ready data solutions.
 
@@ -158,7 +158,7 @@ Although not part of the core Apache Kafka project, the **Schema Registry**—av
 
 The Schema Registry is essential for teams managing structured data, ensuring safe and consistent data exchange between services.
 
-## 4. Kafka Setup & CLI
+## 3. Kafka Setup & CLI
 
 Now that you’ve learned about Kafka’s architecture and supporting tools, let’s walk through setting up Kafka locally and running it using the command line.
 
@@ -337,7 +337,7 @@ Kafka will mark the topic for deletion.
 </div>
 
 ---
-## 5. Kafka with Python
+## 4. Kafka with Python
 
 Now that you've interacted with Kafka using the command line, let's take the next step: integrating Kafka into a Python application.
 
@@ -497,7 +497,7 @@ For production setups with stricter data governance, consider using **Avro or Pr
 
 </div>
 
-## 6. Security, Monitoring & Tuning
+## 5. Security, Monitoring & Tuning
 
 Once you move beyond local development, these aspects become critical for a production-ready Kafka cluster. In real-world deployments, securing your Kafka ecosystem, monitoring its performance, and fine-tuning its behaviour are essential for reliability, efficiency, and data integrity.
 
@@ -611,7 +611,7 @@ Kafka is disk- and memory-intensive. OS-level tuning can significantly affect pe
 
 ---
 
-## 7. Case Studies
+## 6. Case Studies
 
 Kafka's versatility has led to widespread adoption across industries—from tech giants to banks—serving as the backbone for real-time, resilient data pipelines. Here are some notable examples that demonstrate its scalability, performance, and flexibility.
 
@@ -656,7 +656,7 @@ Uber relies on Kafka for its dynamic, data-driven operations at global scale.
 
 ---
 
-## 8. Conclusion
+## 7. Conclusion
 
 These real-world case studies showcase how Kafka enables organisations to build systems that are:
 
@@ -673,7 +673,7 @@ These case studies highlight Kafka's flexibility and power as a central nervous 
 
 ---
 
-## 9. Activities
+## 8. Activities
 
 ### Activity 1. Real-Time Temperature Sensor Stream
 
