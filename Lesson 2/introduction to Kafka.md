@@ -4,6 +4,10 @@
 
 Apache Kafka is an open-source distributed streaming platform that enables you to publish, subscribe to, store, and process streams of records in a fault-tolerant way. It's often described as a distributed commit log or a distributed publish-subscribe messaging system. Unlike traditional messaging systems, Kafka is designed for high-throughput, low-latency data ingestion, and processing, making it ideal for real-time data pipelines and streaming applications.
 
+### Brief History of Kafka
+
+Kafka was originally developed at LinkedIn in 2011 to handle the company's massive volume of activity stream data. It was designed to provide a high-throughput, low-latency platform for handling event streams at scale. In 2012, it was open-sourced under the Apache Software Foundation, and since then, it has grown into a vibrant open-source community with widespread adoption across various industries.
+
 ### Why Kafka? (Benefits and Use Cases )
 
 Kafka's popularity stems from its ability to address common challenges in data integration and processing. Here are some key benefits and typical use cases:
@@ -18,15 +22,13 @@ Kafka's popularity stems from its ability to address common challenges in data i
   
 | **Use Case**         | **Description**                                                                                                   | **Real-World Example**                                                                                                                 |
 |----------------------|-------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| Real-time Analytics  | Ingesting and processing sensor data, website activity, or financial transactions for immediate insights.         | Audi uses Kafka to ingest vehicle telemetry and road condition data in real-time to detect black ice and optimise EV routes.           |
+| Real-time Analytics  | Ingesting and processing sensor data, website activity, or financial transactions for immediate insights.         | Pinterest uses Kafka to collect real-time user interaction data (pins, clicks, impressions) and feed into real-time analytics dashboards.           |
 | Log Aggregation      | Centralising logs from various applications and servers for monitoring and analysis.                              | Netflix uses Kafka to aggregate logs from its microservices architecture to monitor streaming quality and infrastructure health.       |
 | Event Sourcing       | Storing all changes to an application's state as a sequence of immutable events.                                 | LinkedIn uses Kafka to track user interactions and metrics as append-only events across messaging and recommendation services.         |
 | Stream Processing    | Building applications that continuously process streams of data (e.g., fraud detection, anomaly detection).       | Grab leverages Kafka Streams with ML models to power GrabDefence, a fraud detection system processing billions of events daily.        |
-| Message Queues       | A high-throughput alternative to traditional message queues for decoupling applications.                          | Bioinformatics organisations use Kafka to replace polling-based workflows with real-time event-driven messaging between pipeline stages.|
-| Data Integration     | Connecting various systems by acting as a central hub for data exchange.                                          | KBTG Bank and AA Ireland use Kafka as a central data backbone—handling 10M+ daily transactions and enabling real-time pricing engines. |
-### Brief History of Kafka
+| Message Queues       | A high-throughput alternative to traditional message queues for decoupling applications.                          | Airbnb uses Kafka as a replacement for traditional messaging queues to enable real-time communication between services.|
+| Data Integration     | Connecting various systems by acting as a central hub for data exchange.                                          | ING Bank uses Kafka as a central nervous system to connect legacy and modern systems, enabling real-time data movement across domains. |
 
-Kafka was originally developed at LinkedIn in 2011 to handle the company's massive volume of activity stream data. It was designed to provide a high-throughput, low-latency platform for handling event streams at scale. In 2012, it was open-sourced under the Apache Software Foundation, and since then, it has grown into a vibrant open-source community with widespread adoption across various industries.
 
 -----
 
@@ -188,12 +190,12 @@ java -version
 
 ### Downloading and Extracting Kafka
 
-1. **Download:** Visit the official Apache Kafka website:  
-   [https://kafka.apache.org/downloads](https://kafka.apache.org/downloads)  
+1. **Download:** [Visit the official Apache Kafka website](https://kafka.apache.org/downloads)
+
    Choose the latest stable release (e.g., `kafka_2.13-3.x.x.tgz`).  
    The `2.13` refers to the Scala version used.
 
-2. **Extract the archive:**
+3. **Extract the archive:**
 
 ```bash
 tar -xzf kafka_2.13-3.x.x.tgz
@@ -234,7 +236,7 @@ Let’s explore how to work with Kafka using its command-line interface.
 
 ---
 
-#### - Creating Topics
+#### Creating Topics
 
 Before producing or consuming messages, you need a topic.
 
@@ -246,7 +248,7 @@ For single-broker setups, keep the replication factor as `1`.
 
 ---
 
-#### - Listing Topics
+#### Listing Topics
 
 To confirm your topic was created:
 
@@ -258,7 +260,7 @@ You should see `my_first_topic` listed.
 
 ---
 
-#### - Producing Messages
+#### Producing Messages
 
 Use the Kafka console producer to send messages to the topic.
 
@@ -278,7 +280,7 @@ Press `Ctrl+C` to stop the producer.
 
 ---
 
-#### - Consuming Messages
+#### Consuming Messages
 
 To read messages from the topic, use the Kafka console consumer.
 
@@ -298,7 +300,7 @@ Keep this window open to see new messages in real-time. Press `Ctrl+C` to exit.
 
 ---
 
-#### - Deleting Topics
+#### Deleting Topics
 
 You can delete a topic after enabling deletion in the Kafka config:
 
@@ -651,33 +653,10 @@ Uber relies on Kafka for its dynamic, data-driven operations at global scale.
 - **Surge Pricing:** Adjusting pricing based on supply-demand telemetry
 - **Operational Intelligence:** Live insights into trips, driver availability, delays, etc.
 
----
-
-### Financial Institutions
-
-**Why Kafka:**  
-Financial services trust Kafka for its **durability**, **fault tolerance**, and **performance under pressure**.
-
-**Example Use Cases:**
-- **Real-time Transaction Processing:** Secure stream processing for fraud prevention and risk scoring
-- **Market Data Distribution:** High-speed delivery of price feeds and trading data
-- **Customer 360 View:** Aggregating multi-channel interactions into unified profiles
-- **Auditing & Compliance:** Immutable logging for regulatory and forensic analysis
 
 ---
 
-### Real-time Analytics Pipelines
-
-Kafka often sits at the heart of modern data architecture, enabling **streaming-first** analytics systems.
-
-**Key Use Cases:**
-- **ETL Pipelines:** Kafka ingests from sources, transforms with Kafka Streams, and loads into lakes/warehouses
-- **Recommendation Engines:** Streaming user interaction data into ML models in real time
-- **IoT Ingestion:** Handling sensor/device data at scale for real-time insights and automation
-
----
-
-## 7. Conclusion
+## 8. Conclusion
 
 These real-world case studies showcase how Kafka enables organisations to build systems that are:
 
@@ -694,38 +673,116 @@ These case studies highlight Kafka's flexibility and power as a central nervous 
 
 ---
 
-## 8. Activities
+## 9. Activities
 
-### A. Real-Time Log Processing System with Kafka and Python
+### Activity 1. Real-Time Log Processing System with Kafka and Python
 
 **Objective:**
 Design and implement a real-time log processing system using Apache Kafka and Python. This system should simulate a continuous stream of log messages generated by an application, send them to a Kafka topic via a producer, and concurrently consume those messages using a consumer that displays them in real-time.
 
 **Instructions:**
 
-A. Set Up Kafka Locally or Use a Cloud Provider:
+**A. Set Up Kafka Locally or Use a Cloud Provider:**
 
 - Install and configure Apache Kafka and Zookeeper.
 - Create a Kafka topic (e.g., `logs-topic`).
 
-B. Implement the Kafka Producer (Python):
+**B. Implement the Kafka Producer (Python):**
 
 - Simulate log messages (e.g., INFO, ERROR, DEBUG) using random or timestamped data.
 - Send these messages continuously to the Kafka topic.
 
-C. Implement the Kafka Consumer (Python):
+**C. Implement the Kafka Consumer (Python):**
 
 - Subscribe to the same Kafka topic.
 - Continuously receive and print/log the incoming messages in real-time.
 
-D. Ensure Fault Tolerance and Robustness:
+**D. Ensure Fault Tolerance and Robustness:**
 
 - Handle producer/consumer errors gracefully.
 - Add basic logging and retry logic if desired.
 
 
-### B. 
+### Activity 2. Building a Simple Real-Time Log Streaming System with Kafka and Python
 
+**Objective:**
+To implement a basic real-time data pipeline using Apache Kafka and Python by setting up a Kafka producer to continuously generate and send log messages to a Kafka topic, and a Kafka consumer to subscribe to the topic and display those messages in real time—laying the foundation for scalable, event-driven systems.
+
+**Instructions:**
+
+**A. Set up Kafka Producer:** 
+```python
+from kafka import KafkaProducer
+import time
+
+# Initialise the Kafka producer
+producer = KafkaProducer(bootstrap_servers='localhost:9092')
+
+# Continuously send log messages
+while True:
+    log_msg = "Log message at " + time.strftime("%Y-%m-%d %H:%M:%S")
+    producer.send('logs', log_msg.encode('utf-8'))
+    print("Sent:", log_msg)
+    time.sleep(2)
+```
+
+**B. Set up Kafka Consumer:**
+
+```python
+from kafka import KafkaConsumer
+
+# Initialize the Kafka consumer
+consumer = KafkaConsumer('logs', bootstrap_servers='localhost:9092')
+
+# Continuously listen for messages and print them
+for message in consumer:
+    print("Received:", message.value.decode('utf-8'))
+```
+
+### Activity 3. Asynchronous Order Processing with Kafka in an E-Commerce Simulation
+
+**Objective:**
+To build a lightweight e-commerce simulation that demonstrates how Apache Kafka can decouple services by publishing user orders in real time and asynchronously processing them through independent inventory and notification services—improving responsiveness and scalability under high load.
+
+**Instructions:**
+
+**A. Set Up Kafka Locally or via Cloud Provider**
+
+ - Install Apache Kafka and Zookeeper.
+
+ - Create a topic named `orders`.
+
+**B. Create the Order Service (Producer)**
+
+ - Simulate real-time user order events (e.g., user ID, product ID, quantity).
+
+ - Publish each order message to the Kafka `orders` topic.
+
+ - This should happen quickly without waiting for downstream processing.
+
+**C. Implement the Inventory Service (Consumer 1)**
+
+ - Consume messages from the `orders` topic.
+
+ - Simulate inventory update (e.g., reduce stock count for ordered product).
+
+ - Log each inventory adjustment.
+
+**D. Implement the Notification Service (Consumer 2)**
+
+ - Also consume from the `orders` topic.
+
+ - Simulate sending a confirmation message to the user (e.g., via email/SMS log).
+
+ - Ensure it works independently of the inventory service.
+
+**E. Test the Workflow**
+
+ - Run the producer and both consumers simultaneously.
+
+ - Observe that the order is processed by multiple services in parallel, not sequentially.
+
+-----
 
 ### References
 
