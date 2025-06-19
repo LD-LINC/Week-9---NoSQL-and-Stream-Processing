@@ -349,7 +349,7 @@ GlobalConnect's experience underscores MongoDB's power as a key enabler for mode
 **Objective:** To design and implement a simple MongoDB-based database to manage a personal blog system, using the structure and content provided in the post.csv file. The system should allow efficient storage, retrieval, and management of blog posts, including metadata such as title, author, content, tags, and timestamps. The goal is to transition from a flat CSV data format to a structured, queryable, and scalable NoSQL data model using MongoDB, thereby enhancing data organization and supporting future blog application development.
 
 **Instructions:** 
- - [Download Movie Dataset CSV](./L1_Assests/Movie%20Dataset.csv)
+ - [Download posts CSV](./L1_Assests/posts.csv)
  - Based on the following data model, create two collections in MongoDB: posts and comments. Use the field definitions to structure your documents accordingly.
 
 ***posts Collection Fields:***
