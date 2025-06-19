@@ -2,7 +2,7 @@
 
 ---
 
-## 1.1 Motivation for NoSQL
+## 1. Motivation for NoSQL
 
 Traditional relational databases (RDBMS) were designed for structured data and predictable, tabular relationships. However, with the rise of big data, web-scale applications, and varied data types like JSON, XML, and multimedia, these systems began to show limitations in flexibility, scalability, and performance.
 
@@ -11,11 +11,16 @@ NoSQL databases emerged to address these challenges. They offer schema-less data
 
 ### Limitations of RDBMS in Big Data
 
-* **Scalability Challenges:** RDBMS typically scale vertically by increasing the power of a single server. This approach eventually hits physical and cost limitations. Horizontal scaling, distributing data across multiple servers, is complex and often inefficient in RDBMS.
-* **Schema Rigidity:** RDBMS requires a predefined schema, meaning tables, columns, and data types must be defined before data insertion. This rigidity hinders agility when data requirements change rapidly or when dealing with diverse, evolving data formats, such as social media feeds or sensor data.
-* **Performance Bottlenecks:** For very large datasets or high read/write throughput, RDBMS can experience performance issues, particularly with complex joins across numerous tables.
-* **Complex Joins:** While SQL joins are powerful, executing many joins on large tables can be computationally expensive and significantly slow down query performance.
-* **Handling Unstructured Data:** RDBMS are not well-suited for efficiently storing and querying unstructured data (e.g., text, images, videos) or semi-structured data (e.g., JSON, XML). This data often needs to be stored as less efficient Binary Large Objects (BLOBs) or Character Large Objects (CLOBs).
+**Scalability:** RDBMS scale vertically (bigger servers), which is costly and limited. Horizontal scaling across servers is complex and inefficient.
+
+**Rigid Schema:** Requires fixed schemas upfront, making it hard to adapt to evolving or diverse data formats like sensor logs or social media.
+
+**Performance Issues:** Struggles with large datasets and high-throughput workloads, especially with frequent or complex joins.
+
+**Join Complexity:** Joins across big tables are powerful but can slow performance significantly.
+
+**Unstructured Data Handling:** Poor fit for text, images, or JSON—often stored inefficiently as Binary Large Objects (BLOBs) or Character Large Objects (CLOBs).
+
 
 ### Emergence of NoSQL
 
@@ -43,13 +48,15 @@ NoSQL databases excel in scenarios where traditional RDBMS might struggle. Commo
 
 ---
 
-## 1.2 NoSQL Database Types and Models
+## 1.1. NoSQL Database Types and Models
 
 ### Diversity of NoSQL
 
 Unlike RDBMS, which largely adhere to the relational model, NoSQL is an umbrella term encompassing a wide variety of database systems. These systems are primarily categorized by their underlying **data model**, which dictates how data is structured and accessed. Understanding these different types is crucial because each is optimized for specific problems and data access patterns; there is no "one-size-fits-all" NoSQL database.
 
-### Key-Value Stores
+To choose the right NoSQL database, it's essential to understand the strengths and trade-offs of each type. NoSQL databases vary not only in how they store and retrieve data but also in the real-world problems they are optimized to solve. The following sections explore each major NoSQL model along with real industry examples to illustrate their practical applications.
+
+### 1. Key-Value Stores
 
 This is the simplest NoSQL data model, where data is stored as a collection of unique **key-value pairs**, similar to a hash map or dictionary. The key is used to retrieve the associated value, which is opaque to the database (it can be a string, number, JSON object, or even an image).
 
@@ -57,8 +64,9 @@ This is the simplest NoSQL data model, where data is stored as a collection of u
 * **Schemaless:** There's no predefined schema for the values, offering maximum flexibility.
 * **Examples:** **Redis** (often used for caching and real-time analytics due to its in-memory nature), **Amazon DynamoDB** (a fully managed NoSQL service by AWS), and **Riak** (known for its distributed and fault-tolerant architecture).
 * **Use Cases:** Ideal for scenarios requiring high-speed data retrieval based on a unique identifier, such as **caching, session management, and shopping carts**.
+* **Amazon DynamoDB at Airbnb:** Airbnb uses Amazon DynamoDB to power high-throughput services like message queuing and user metadata storage. Its serverless scalability and microsecond latency make it ideal for user-facing operations like wishlist data and dynamic pricing.
 
-### Document-Oriented Databases
+### 2. Document-Oriented Databases
 
 Document databases store data in **"documents,"** which are typically self-contained units of data. These documents are usually in formats like **JSON** (JavaScript Object Notation), **BSON** (Binary JSON), or XML. Each document can have a different structure, making them highly flexible.
 
@@ -66,8 +74,9 @@ Document databases store data in **"documents,"** which are typically self-conta
 * **Query by Document Attributes:** Document databases allow querying not just by a unique ID but also by attributes within the documents, making them more powerful for complex queries than simple key-value stores.
 * **Examples:** The most popular document database is **MongoDB**, known for its rich query language and scalability. Others include **Couchbase** and **Apache CouchDB**.
 * **Use Cases:** Excellent for **content management systems, user profiles, and product catalogs** where data structures can vary.
+* **MongoDB at eBay:** eBay uses MongoDB for its metadata storage layer, particularly for its search suggestion and classification services. MongoDB's flexible schema and rich querying made it easier to evolve the product taxonomy and metadata as the marketplace scaled.
 
-### Column-Family Stores
+### 3. Column-Family Stores
 
 While sometimes referred to as "columnar," these are more accurately "column-family stores." Data is stored in rows, but within each row, columns are grouped into **"column families."** This means that data for a particular column family is stored together on disk, differing from traditional row-oriented databases.
 
@@ -75,6 +84,7 @@ While sometimes referred to as "columnar," these are more accurately "column-fam
 * **High Write Throughput:** Designed for incredibly high write throughput, often used for ingesting massive amounts of data from numerous sources.
 * **Examples:** **Apache Cassandra** (distributed and highly available, no single point of failure) and **Apache HBase** (built on top of Hadoop HDFS, often used for big data analytics workloads).
 * **Use Cases:** Ideal for **time-series data, large-scale analytics, and IoT data ingestion** due to their efficiency in handling append-only, high-volume data.
+* **Apache Cassandra at Netflix:** Netflix uses Apache Cassandra to store and serve millions of data points per second for services like user viewing history, playback state, and real-time metrics. Cassandra’s high availability and linear scalability make it ideal for globally distributed workloads.
 
 ### Graph Databases
 
@@ -83,10 +93,11 @@ Graph databases store data in a graph structure, consisting of **"nodes"** (enti
 * **Optimized for Relationship Queries:** Graph databases excel at traversing complex relationships quickly and efficiently, a task where RDBMS would require complex and slow self-joins.
 * **Examples:** **Neo4j** (the most popular graph database, known for its Cypher query language), **Amazon Neptune**, and **ArangoDB** (a multi-model database).
 * **Use Cases:** Perfect for **social networks, recommendation engines, fraud detection, and knowledge graphs** where understanding complex interconnections is key.
+* **Neo4j at eBay:** eBay uses Neo4j to power its knowledge graph that helps detect relationships between entities like products, categories, and search queries. This graph model improves search relevance and recommendation quality in a large and dynamic marketplace.
 
 ---
 
-## 1.3 Core Features of NoSQL Databases 
+## 1.2. Core Features of NoSQL Databases 
 
 NoSQL databases are built on several core architectural principles that differentiate them from traditional RDBMS and enable them to handle modern data challenges effectively. These features are central to achieving their scalability, performance, and flexibility.
 
@@ -137,7 +148,7 @@ These two features are crucial for achieving scalability, fault tolerance, and h
     * **Read Scalability:** Multiple replicas allow read requests to be distributed among them, significantly increasing read throughput.
     * **Strategies:** Common replication strategies include **master-slave** (one master handles writes, replicates to slaves for reads), **master-master** (all nodes accept writes and synchronize changes), and **quorum-based** (writes require acknowledgment from a write quorum, reads from a read quorum, offering fine-grained consistency/availability control).
 
-# Case Study: Boosting Scalability and Agility with NoSQL at InnovateRetail
+# 2. Case Study: Boosting Scalability and Agility with NoSQL at InnovateRetail
 
 ## 1. Introduction
 
