@@ -1,89 +1,38 @@
 ### Activity 1. Real-Time Log Processing System with Kafka and Python
 
-**A. Set Up Kafka Locally or Use a Cloud Provider:**
+**Objective:**
+Build a real-time temperature monitoring system using Apache Kafka and Python. Simulate virtual temperature sensors that continuously publish readings to a Kafka topic. A Kafka consumer application will subscribe to this topic, process the incoming data stream, and flag any temperature readings that exceed a defined threshold. This activity demonstrates Kafka's role in real-time IoT data ingestion, stream processing, and anomaly detection.
 
-- Install and configure Apache Kafka and Zookeeper.
-- Create a Kafka topic (e.g., `logs-topic`)
-  
-```bash
-kafka-topics.sh --create --topic logs-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
-```
+**Solution:**
 
-**B. Implement the Kafka Producer (Python):**
-
-```bash
-pip install kafka-python
-```
-`producer.py`
+**1: Simulate Temperature Sensor (Producer)**
 
 ```python
 from kafka import KafkaProducer
-import time
 import random
+import time
 
-# Initialize producer
 producer = KafkaProducer(bootstrap_servers='localhost:9092')
-
-# Log levels for simulation
-log_levels = ['INFO', 'ERROR', 'DEBUG', 'WARNING']
-
-# Produce log messages
 while True:
-    log_level = random.choice(log_levels)
-    timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
-    message = f"{log_level}: Log message at {timestamp}"
-    
-    producer.send('logs-topic', message.encode('utf-8'))
-    print(f"Sent: {message}")
-    
-    time.sleep(2)
+    temp = round(random.uniform(20.0, 40.0), 2)
+    producer.send('temperature', str(temp).encode('utf-8'))
+    print("Sent Temperature:", temp)
+    time.sleep(3)
 ```
 
-**C. Implement the Kafka Consumer (Python):**
-
-`consumer.py`
+**2: Consumer to Detect High Temperature**
 
 ```python
 from kafka import KafkaConsumer
 
-# Initialize consumer
-consumer = KafkaConsumer(
-    'logs-topic',
-    bootstrap_servers='localhost:9092',
-    auto_offset_reset='earliest',
-    group_id='log-consumers'
-)
-
-# Consume and print log messages
-for msg in consumer:
-    print(f"Received: {msg.value.decode('utf-8')}")
+consumer = KafkaConsumer('temperature', bootstrap_servers='localhost:9092')
+for message in consumer:
+    temp = float(message.value.decode('utf-8'))
+    if temp > 35:
+        print(f"ALERT: High temperature detected - {temp}°C")
+    else:
+        print("Temperature OK:", temp)
 ```
-
-**D. Ensure Fault Tolerance and Robustness:**
-
- - Use `try-except` blocks in both producer and consumer to handle exceptions.
-
- - Consider adding retries, logging to a file, or buffering messages in case of failure.
-
-**E. How to Run:**
-
- - Start Kafka and Zookeeper.
-
- - Create the topic `logs-topic`.
-
-In one terminal, run:
-
-```bash
-python consumer.py
-```
-
-In another terminal, run:
-
-```bash
-python producer.py
-```
-
-Watch logs stream in real time!
 
 ---
 
@@ -92,9 +41,9 @@ Watch logs stream in real time!
 **Objective:**
 To implement a basic real-time data pipeline using Apache Kafka and Python by setting up a Kafka producer to continuously generate and send log messages to a Kafka topic, and a Kafka consumer to subscribe to the topic and display those messages in real time—laying the foundation for scalable, event-driven systems.
 
-**Instructions:**
+**Solution:**
 
-**A. Set up Kafka Producer:** 
+**1. Set up Kafka Producer:** 
 ```python
 from kafka import KafkaProducer
 import time
@@ -111,7 +60,7 @@ while True:
 
 ```
 
-**B. Set up Kafka Consumer:**
+**2. Set up Kafka Consumer:**
 
 ```python
 from kafka import KafkaConsumer
@@ -128,16 +77,9 @@ for message in consumer:
 
 ### Activity 3. Asynchronous Order Processing with Kafka in an E-Commerce Simulation**
 
-**1. Prerequisites**
-Kafka installed locally (or use Confluent Cloud) with topic `orders-topic` and 3 partitions
+**Solution:** 
 
-Programming language SDK:
-
-For Python: `confluent_kafka`
-
-For Java: `kafka-clients` 
-
-**2. Producer Code Example (Python)**
+**1. Producer Code Example (Python)**
 
 ```python
 from confluent_kafka import Producer
@@ -170,7 +112,7 @@ for i in range(10):
 # Wait for all messages to be delivered
 p.flush()
 `````
- **3. Consumer Code Example (Python for Inventory)**
+ **2. Consumer Code Example (Python for Inventory)**
 
  ```python
 from confluent_kafka import Consumer
@@ -201,7 +143,7 @@ while True:
     c.commit()
  `````
 
-**4. Notification Service Consumer**
+**3. Notification Service Consumer**
 
 Use the same structure as the Inventory Service Consumer, but change the group ID:
 
@@ -214,7 +156,7 @@ Then update the print message to simulate sending a confirmation:
 print(f"Sending confirmation for order {order['order_id']} to User {order['user_id']}")
 `````
 
-**5. Running the Project**
+**4. Running the Project**
 
  - Start Kafka (and ZooKeeper if needed).
 
