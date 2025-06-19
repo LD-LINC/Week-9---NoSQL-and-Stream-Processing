@@ -294,7 +294,7 @@ GlobalConnect's experience underscores MongoDB's power as a key enabler for mode
 
 **Objective:** This activity will challenge you to write more specific and efficient queries using a wider range of MongoDB query operators. You'll also learn to shape your query results using projections.
 
-**Instructions:** Refer to the following dataset - 
+**Instructions:** [Download Movie Dataset CSV](./L1_Assests/Movie%20Dataset.csv)
 
 **A. Movies with High IMDb and Metacritic Scores:**
  - Find all movies released after 2010 that have an IMDb rating greater than 8.5 AND a Metacritic score greater than 80.
