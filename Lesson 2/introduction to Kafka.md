@@ -702,6 +702,7 @@ Design and implement a real-time log processing system using Apache Kafka and Py
 - Handle producer/consumer errors gracefully.
 - Add basic logging and retry logic if desired.
 
+---
 
 ### Activity 2. Building a Simple Real-Time Log Streaming System with Kafka and Python
 
@@ -738,6 +739,7 @@ consumer = KafkaConsumer('logs', bootstrap_servers='localhost:9092')
 for message in consumer:
     print("Received:", message.value.decode('utf-8'))
 ```
+---
 
 ### Activity 3. Asynchronous Order Processing with Kafka in an E-Commerce Simulation
 
