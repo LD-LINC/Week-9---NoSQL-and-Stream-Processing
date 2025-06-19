@@ -3,7 +3,7 @@
 ---
 
 
-## 2.1 What is MongoDB?
+## 1. What is MongoDB?
 
 MongoDB is a leading **NoSQL database**, specifically a **document-oriented database**. It's open-source and cross-platform, designed for high performance, high availability, and automatic scaling. Unlike traditional relational databases, MongoDB stores data in flexible, **JSON-like documents**. This flexibility is a key advantage for modern, agile development.
 
@@ -45,7 +45,7 @@ These are the fundamental building blocks of data in MongoDB:
 
 ---
 
-## 2.2 CRUD Operations in MongoDB
+## 1.1. CRUD Operations in MongoDB
 
 ### Connecting to MongoDB (via Mongo Shell)
 Before performing operations, connect to your MongoDB instance:
@@ -133,7 +133,7 @@ Removing documents or collections:
 
 ---
 
-## 2.3 Indexing and Aggregation Framework
+## 1.2. Indexing and Aggregation Framework
 
 ### Performance Tuning with Indexes
 An **index** is a special data structure that stores a small, ordered portion of a collection's data, along with references to the original documents.
@@ -222,7 +222,7 @@ This example shows how stages are chained: sort first, then group and collect, t
 
 ---
 
-## 2.4 MongoDB Schema Design
+## 1.3. MongoDB Schema Design
 
 ### Schema Design in NoSQL
 While MongoDB is "schema-less" at the database level, a well-thought-out **logical schema** is crucial for performance, scalability, and maintainability.
@@ -247,7 +247,7 @@ The core decision in MongoDB schema design:
     * **When to use:** One-to-many or many-to-many relationships, frequently updated data, large or unbounded embedded arrays.
  
       
-# Case Study: MongoDB's Transformative Role at GlobalConnect
+# 2. Case Study: MongoDB's Transformative Role at GlobalConnect
 
 ## 1. Introduction
 GlobalConnect, a leading global SaaS provider offering a suite of collaboration and project management tools, faced escalating challenges with its traditional relational database infrastructure. As their user base expanded and the demand for more dynamic, personalized features grew, their existing SQL database struggled to keep pace, leading to performance bottlenecks and hindering rapid feature deployment. This case study details GlobalConnect's decision to integrate MongoDB into their data architecture to address these issues, ultimately achieving superior data flexibility, scalability, and developer agility.
@@ -288,4 +288,4 @@ The strategic adoption of MongoDB brought substantial improvements to GlobalConn
 ## 6. Conclusion
 GlobalConnect's experience underscores MongoDB's power as a key enabler for modern, agile software development and scalable data management. By thoughtfully integrating MongoDB into their architecture for use cases demanding flexibility and horizontal scalability, GlobalConnect not only overcame critical database limitations but also positioned itself for continued rapid innovation and sustained growth in a competitive SaaS market. MongoDB proved to be a pivotal technology in their journey towards a more adaptable and high-performing platform. 
 
-
+# 3. Activities
