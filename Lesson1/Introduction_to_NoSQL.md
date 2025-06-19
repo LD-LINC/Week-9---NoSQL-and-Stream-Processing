@@ -27,12 +27,19 @@ NoSQL solutions prioritize **high scalability, schema flexibility, and excellent
 
 NoSQL databases excel in scenarios where traditional RDBMS might struggle. Common use cases include:
 
-* **Real-time Big Data:** Applications requiring real-time analytics, dashboards, or data streaming with massive data ingestion and quick query responses (e.g., financial trading, fraud detection).
-* **Content Management Systems (CMS):** Platforms that handle diverse content types (articles, images, videos) and require flexible schemas and fast retrieval. Document databases are particularly well-suited here.
-* **E-commerce and Product Catalogs:** Storing product information with varying attributes, managing customer carts, and handling high transaction volumes. Key-value stores or document databases can be very effective.
-* **Social Networking and User Profiles:** Managing complex user relationships, activity feeds, and rapidly changing profile data. Graph databases are ideal for relationships, while document or key-value stores can handle user profiles.
-* **IoT and Sensor Data:** Ingesting and storing massive amounts of time-series data from sensors and IoT devices. Column-family stores are often used for their efficient storage of time-stamped data.
-* **Personalization and Recommendation Engines:** Building recommendation systems based on user behavior, preferences, and product interactions, requiring fast access to related data. Graph databases and key-value stores can be employed here.
+* **Real-time Big Data:** Applications requiring real-time analytics, dashboards, or data streaming with massive data ingestion and quick query responses (e.g., financial trading, fraud detection). Mastercard uses AI-driven real-time analytics to process about 160 billion transactions annually, assigning fraud risk scores in under 50 ms to detect suspicious activities.
+* **Content Management Systems (CMS):** Platforms that handle diverse content types (articles, images, videos) and require flexible schemas and fast retrieval. Document databases are particularly well-suited here. L.L. Bean uses NoSQL technologies (including Hadoop/NoSQL stacks) to build a 100 TB cloud repository of customer profiles and content to deliver real-time marketing and personalized experiences.
+* **E-commerce and Product Catalogs:** Storing product information with varying attributes, managing customer carts, and handling high transaction volumes. Key-value stores or document databases can be very effective. ZOZOTOWN (Japan’s largest fashion e-commerce platform) migrated shopping cart and inventory services from SQL to Amazon DynamoDB, significantly reducing latency and operational overhead during high-load periods.
+* **Social Networking and User Profiles:** Managing complex user relationships, activity feeds, and rapidly changing profile data. Graph databases are ideal for relationships, while document or key-value stores can handle user profiles. Instagram employs Cassandra to store its feed, Direct messages, and manage activity at massive scale — handling social relationships, user content, and real-time feed generation.
+* **IoT and Sensor Data:** Ingesting and storing massive amounts of time-series data from sensors and IoT devices. Column-family stores are often used for their efficient storage of time-stamped data. WellAware (oil and gas tech) uses Cassandra to ingest and process time-series sensor data from thousands of devices, supporting real-time analytics at scale.
+* **Personalization and Recommendation Engines:** Building recommendation systems based on user behavior, preferences, and product interactions, requiring fast access to related data. Graph databases and key-value stores can be employed here. LinkedIn, Pinterest, and Netflix are known to use graph and key-value stores (like Titan and EVCache) to power recommendation systems and personalized feeds.
+
+**References**
+1. Villano, Matt. “Mastercard Uses AI to Detect Credit Card Fraud and Protect Consumers.” Business Insider, 12 May 2025, www.businessinsider.com/mastercard-ai-credit-card-fraud-detection-protects-consumers-2025-5.
+2. Heffernan, Virginia. “Big Moose Is Watching You.” WIRED, 31 Oct. 2014, www.wired.com/2014/10/big-moose-is-watching-you/.
+3. “How Amazon DynamoDB Supported ZOZOTOWN’s Shopping Cart Migration Project | Amazon Web Services.” Amazon Web Services, 30 Aug. 2022, aws.amazon.com/blogs/database/how-amazon-dynamodb-supported-zozotowns-shopping-cart-migration-project/.
+4. WellAware. “WellAware.” Planetcassandra.org, 2023, planetcassandra.org/usecases/wellaware/311/. 
+
 
 ---
 
