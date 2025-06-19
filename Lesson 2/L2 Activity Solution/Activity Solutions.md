@@ -1,3 +1,91 @@
+### Activity 1. Real-Time Log Processing System with Kafka and Python
+
+**A. Set Up Kafka Locally or Use a Cloud Provider:**
+
+- Install and configure Apache Kafka and Zookeeper.
+- Create a Kafka topic (e.g., `logs-topic`)
+  
+```bash
+kafka-topics.sh --create --topic logs-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+```
+
+**B. Implement the Kafka Producer (Python):**
+
+```bash
+pip install kafka-python
+```
+`producer.py`
+
+```python
+from kafka import KafkaProducer
+import time
+import random
+
+# Initialize producer
+producer = KafkaProducer(bootstrap_servers='localhost:9092')
+
+# Log levels for simulation
+log_levels = ['INFO', 'ERROR', 'DEBUG', 'WARNING']
+
+# Produce log messages
+while True:
+    log_level = random.choice(log_levels)
+    timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
+    message = f"{log_level}: Log message at {timestamp}"
+    
+    producer.send('logs-topic', message.encode('utf-8'))
+    print(f"Sent: {message}")
+    
+    time.sleep(2)
+```
+
+**C. Implement the Kafka Consumer (Python):**
+
+`consumer.py`
+
+```python
+from kafka import KafkaConsumer
+
+# Initialize consumer
+consumer = KafkaConsumer(
+    'logs-topic',
+    bootstrap_servers='localhost:9092',
+    auto_offset_reset='earliest',
+    group_id='log-consumers'
+)
+
+# Consume and print log messages
+for msg in consumer:
+    print(f"Received: {msg.value.decode('utf-8')}")
+```
+
+**D. Ensure Fault Tolerance and Robustness:**
+
+ - Use `try-except` blocks in both producer and consumer to handle exceptions.
+
+ - Consider adding retries, logging to a file, or buffering messages in case of failure.
+
+**E. How to Run:**
+
+ - Start Kafka and Zookeeper.
+
+ - Create the topic `logs-topic`.
+
+In one terminal, run:
+
+```bash
+python consumer.py
+```
+
+In another terminal, run:
+
+```bash
+python producer.py
+```
+
+Watch logs stream in real time!
+
+---
 
 ### Activity 2. Building a Simple Real-Time Log Streaming System with Kafka and Python
 
@@ -20,6 +108,7 @@ while True:
     producer.send('logs', log_msg.encode('utf-8'))
     print("Sent:", log_msg)
     time.sleep(2)
+
 ```
 
 **B. Set up Kafka Consumer:**
@@ -34,6 +123,7 @@ consumer = KafkaConsumer('logs', bootstrap_servers='localhost:9092')
 for message in consumer:
     print("Received:", message.value.decode('utf-8'))
 ```
+
 ---
 
 ### Activity 3. Asynchronous Order Processing with Kafka in an E-Commerce Simulation**
