@@ -677,7 +677,7 @@ Kafka often sits at the heart of modern data architecture, enabling **streaming-
 
 ---
 
-### Conclusion
+## 7. Conclusion
 
 These real-world case studies showcase how Kafka enables organisations to build systems that are:
 
@@ -693,6 +693,14 @@ Whether you're building dashboards, alerting systems, fraud detection engines, o
 These case studies highlight Kafka's flexibility and power as a central nervous system for data, enabling organizations to build highly scalable, resilient, and real-time data-driven applications.
 
 ---
+
+## 8. Activities
+
+### A. Real-Time Log Processing System with Kafka and Python
+
+### B. 
+
+
 ### References
 
 - engineering.linkedin.com. (n.d.). *Kafka at LinkedIn: Current and Future*. [online] Available at: https://engineering.linkedin.com/kafka/kafka-linkedin-current-and-future
