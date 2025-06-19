@@ -60,6 +60,14 @@ To choose the right NoSQL database, it's essential to understand the strengths a
 
 This is the simplest NoSQL data model, where data is stored as a collection of unique **key-value pairs**, similar to a hash map or dictionary. The key is used to retrieve the associated value, which is opaque to the database (it can be a string, number, JSON object, or even an image).
 
+<p align="center">
+  <img src="L1_Assests/Key Value Storess.png" alt="alttext" width="60%" />
+</p>
+<p align="center">
+Reference: Key-value Stores (Glotra, 2024)
+</p>
+
+
 * **High Performance for Simple Lookups:** Key-value stores offer incredibly fast read and write performance for direct lookups.
 * **Schemaless:** There's no predefined schema for the values, offering maximum flexibility.
 * **Examples:** **Redis** (often used for caching and real-time analytics due to its in-memory nature), **Amazon DynamoDB** (a fully managed NoSQL service by AWS), and **Riak** (known for its distributed and fault-tolerant architecture).
