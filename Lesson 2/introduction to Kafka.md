@@ -722,6 +722,15 @@ kafka-topics.sh --create --topic temperature-readings \
 **Objective:**
 To implement a basic real-time data pipeline using Apache Kafka and Python by setting up a Kafka producer to continuously generate and send log messages to a Kafka topic, and a Kafka consumer to subscribe to the topic and display those messages in real time—laying the foundation for scalable, event-driven systems.
 
+**Prerequisites**
+Kafka installed locally (or use Confluent Cloud) with topic `orders-topic` and 3 partitions
+
+Programming language SDK:
+
+For Python: `confluent_kafka`
+
+For Java: `kafka-clients`
+
 **Instructions:**
 
 **A. Set up Kafka Producer** 
