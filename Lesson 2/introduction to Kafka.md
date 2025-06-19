@@ -712,33 +712,9 @@ To implement a basic real-time data pipeline using Apache Kafka and Python by se
 **Instructions:**
 
 **A. Set up Kafka Producer:** 
-```python
-from kafka import KafkaProducer
-import time
-
-# Initialise the Kafka producer
-producer = KafkaProducer(bootstrap_servers='localhost:9092')
-
-# Continuously send log messages
-while True:
-    log_msg = "Log message at " + time.strftime("%Y-%m-%d %H:%M:%S")
-    producer.send('logs', log_msg.encode('utf-8'))
-    print("Sent:", log_msg)
-    time.sleep(2)
-```
 
 **B. Set up Kafka Consumer:**
 
-```python
-from kafka import KafkaConsumer
-
-# Initialize the Kafka consumer
-consumer = KafkaConsumer('logs', bootstrap_servers='localhost:9092')
-
-# Continuously listen for messages and print them
-for message in consumer:
-    print("Received:", message.value.decode('utf-8'))
-```
 ---
 
 ### Activity 3. Asynchronous Order Processing with Kafka in an E-Commerce Simulation
