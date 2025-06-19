@@ -376,7 +376,7 @@ GlobalConnect's experience underscores MongoDB's power as a key enabler for mode
   commentDate: Date
 }
 ```
-**Tasks**
+**Tasks:**
 
 **A. Data Insertion:**
  - Insert CSV data into the `posts` collection.
