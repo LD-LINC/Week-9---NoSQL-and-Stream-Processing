@@ -56,7 +56,7 @@ Unlike RDBMS, which largely adhere to the relational model, NoSQL is an umbrella
 
 To choose the right NoSQL database, it's essential to understand the strengths and trade-offs of each type. NoSQL databases vary not only in how they store and retrieve data but also in the real-world problems they are optimized to solve. The following sections explore each major NoSQL model along with real industry examples to illustrate their practical applications.
 
-### 1. Key-Value Stores
+### A. Key-Value Stores
 
 This is the simplest NoSQL data model, where data is stored as a collection of unique **key-value pairs**, similar to a hash map or dictionary. The key is used to retrieve the associated value, which is opaque to the database (it can be a string, number, JSON object, or even an image).
 
@@ -66,7 +66,7 @@ This is the simplest NoSQL data model, where data is stored as a collection of u
 * **Use Cases:** Ideal for scenarios requiring high-speed data retrieval based on a unique identifier, such as **caching, session management, and shopping carts**.
 * **Amazon DynamoDB at Airbnb:** Airbnb uses Amazon DynamoDB to power high-throughput services like message queuing and user metadata storage. Its serverless scalability and microsecond latency make it ideal for user-facing operations like wishlist data and dynamic pricing.
 
-### 2. Document-Oriented Databases
+### B. Document-Oriented Databases
 
 Document databases store data in **"documents,"** which are typically self-contained units of data. These documents are usually in formats like **JSON** (JavaScript Object Notation), **BSON** (Binary JSON), or XML. Each document can have a different structure, making them highly flexible.
 
@@ -76,7 +76,7 @@ Document databases store data in **"documents,"** which are typically self-conta
 * **Use Cases:** Excellent for **content management systems, user profiles, and product catalogs** where data structures can vary.
 * **MongoDB at eBay:** eBay uses MongoDB for its metadata storage layer, particularly for its search suggestion and classification services. MongoDB's flexible schema and rich querying made it easier to evolve the product taxonomy and metadata as the marketplace scaled.
 
-### 3. Column-Family Stores
+### C. Column-Family Stores
 
 While sometimes referred to as "columnar," these are more accurately "column-family stores." Data is stored in rows, but within each row, columns are grouped into **"column families."** This means that data for a particular column family is stored together on disk, differing from traditional row-oriented databases.
 
@@ -86,7 +86,7 @@ While sometimes referred to as "columnar," these are more accurately "column-fam
 * **Use Cases:** Ideal for **time-series data, large-scale analytics, and IoT data ingestion** due to their efficiency in handling append-only, high-volume data.
 * **Apache Cassandra at Netflix:** Netflix uses Apache Cassandra to store and serve millions of data points per second for services like user viewing history, playback state, and real-time metrics. Cassandra’s high availability and linear scalability make it ideal for globally distributed workloads.
 
-### Graph Databases
+### D. Graph Databases
 
 Graph databases store data in a graph structure, consisting of **"nodes"** (entities) and **"edges"** (relationships between entities). Both nodes and edges can have properties associated with them. Edges also have a direction (e.g., "Person A FRIENDS Person B").
 
@@ -101,7 +101,7 @@ Graph databases store data in a graph structure, consisting of **"nodes"** (enti
 
 NoSQL databases are built on several core architectural principles that differentiate them from traditional RDBMS and enable them to handle modern data challenges effectively. These features are central to achieving their scalability, performance, and flexibility.
 
-### Schema Flexibility
+### A. Schema Flexibility
 
 This is a critical distinction from RDBMS.
 
@@ -113,7 +113,7 @@ This is a critical distinction from RDBMS.
 * **Agile Development:** This flexibility greatly accelerates agile development, allowing developers to rapidly iterate on data models without requiring extensive database schema changes, simplifying deployment and reducing time-to-market.
 * **Evolving Requirements:** In applications where data requirements are constantly evolving (e.g., new features, new types of user data), schema flexibility is invaluable.
 
-### Horizontal Scalability
+### B. Horizontal Scalability
 
 This is arguably the most defining feature of NoSQL databases. Instead of relying on a single, powerful server (vertical scaling or "scale up"), NoSQL databases are designed to distribute data and processing across many smaller, commodity servers ("scale out").
 
@@ -124,7 +124,7 @@ This is arguably the most defining feature of NoSQL databases. Instead of relyin
 * **Sharding/Partitioning:** The mechanism by which data is distributed across multiple nodes is called **sharding** or **partitioning**. The database automatically (or with configuration) splits data into smaller chunks (shards/partitions) and distributes them. Each shard operates independently, managing a subset of the data.
 * **High Performance, Cost-Effective:** Horizontal scalability enables NoSQL databases to handle massive amounts of data and high concurrent user loads while maintaining performance and keeping infrastructure costs down.
 
-### Eventual Consistency
+### C. Eventual Consistency
 
 Many NoSQL databases, especially those prioritizing availability and partition tolerance (AP in CAP theorem), employ **eventual consistency**.
 
@@ -133,7 +133,7 @@ Many NoSQL databases, especially those prioritizing availability and partition t
 * **"Read Your Own Writes":** Some systems offer a stronger form of eventual consistency where a client is guaranteed to read their own most recent writes, even if other clients might still see an older version.
 * **Use Cases:** Eventual consistency is acceptable for many modern applications where immediate consistency is not paramount, such as **social media feeds, sensor data, or e-commerce product reviews**. However, it is generally unsuitable for applications requiring strong transactional integrity like banking systems.
 
-### Partitioning and Replication
+### D. Partitioning and Replication
 
 These two features are crucial for achieving scalability, fault tolerance, and high availability in NoSQL databases.
 
