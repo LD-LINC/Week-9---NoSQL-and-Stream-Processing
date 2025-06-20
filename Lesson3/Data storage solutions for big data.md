@@ -114,7 +114,7 @@ Source: Datalakes (Nekouš, 2024)
 
 ---
 
-### ** Netflix's Data Storage Architecture**
+### Netflix's Data Storage Architecture
 
 Netflix employs a sophisticated, polyglot persistence strategy to manage data for its global streaming service.
 
