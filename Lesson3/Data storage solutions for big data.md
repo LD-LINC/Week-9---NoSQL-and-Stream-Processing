@@ -40,6 +40,13 @@ Big Data storage technologies are broadly classified based on their architecture
 
 A Distributed File System abstracts a network of multiple machines to present a single, logical file system to the user.
 
+<p align="center">
+  <img src="L3_Assets/DFS.png" alt="DFS Architecture" width="80%" />
+</p>
+<p align="center">
+Reference: DFS Architecture (TechTarget, 2025)
+</p>
+
 **Key Architectural Characteristics:**
 * **Block-based Storage**: Files are segmented into large, fixed-size blocks (e.g., 128MB or 256MB) and distributed across the nodes of the cluster.
 * **Data Replication**: Each block is replicated multiple times across different nodes to ensure fault tolerance. The failure of a single node does not lead to data loss, as replicas are available elsewhere in the cluster.
@@ -55,6 +62,13 @@ HDFS is the foundational storage layer of the Hadoop ecosystem, designed for hig
 ### **4. NoSQL Databases**
 
 The term NoSQL ("Not Only SQL") refers to a class of databases designed to handle data models and scaling characteristics that traditional relational database management systems (RDBMS) do not. They excel at managing semi-structured or unstructured data and support horizontal scaling.
+
+<p align="center">
+  <img src="L3_Assets/NoSQL Databases.png" alt="alttext" width="60%" />
+</p>
+<p align="center">
+Reference: NoSQL Databases (Algomaster, 2024)
+</p>
 
 **Primary Types of NoSQL Databases:**
 * **Document Databases (e.g., MongoDB)**: Store data in flexible, self-describing document formats such as JSON or BSON. Each document can have a different structure, providing high schema flexibility.
@@ -85,6 +99,13 @@ Object storage is an architecture that manages data as distinct units, or object
 ### **6. Data Lakes**
 
 A Data Lake is a centralized repository designed to store vast quantities of structured, semi-structured, and unstructured data at any scale.
+
+<p align="center">
+  <img src="L3_Assets/Datalake.png" alt="Datalakes" width="60%" />
+</p>
+<p align="center">
+Source: Datalakes (Nekouš, 2024)
+</p>
 
 **Distinguishing Traits:**
 * **Schema-on-Read**: Unlike a traditional data warehouse which employs a "schema-on-write" model (requiring data to be structured before ingestion), a data lake allows raw data to be loaded without a predefined schema. The structure is applied during data retrieval and analysis. This provides maximum flexibility for data exploration.
