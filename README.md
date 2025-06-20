@@ -1,4 +1,4 @@
-# Week's Content Overview: NoSQL Databases, Streaming, and Big Data
+# Week 9 Overview: NoSQL Databases, Streaming, and Big Data
 
 This week, we are diving deep into the world of modern data management, focusing on NoSQL databases, real-time data processing with Kafka, and scalable storage solutions for big data. The week culminates in a hands-on project where you'll implement a NoSQL database with a streaming data ingestion pipeline.
 
