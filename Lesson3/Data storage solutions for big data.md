@@ -6,7 +6,10 @@ The exponential growth of data generated from digital sources such as applicatio
 The core challenges of big data are commonly defined by the "5 Vs":
 
   <p align="center">
-  <img src="L3_Assets/5V.png" alt="Core Concept" width="60%" />
+  <img src="L3_Assets/5V's of Big Data.png" alt="alttext" width="60%" />
+</p>
+<p align="center">
+Source: 5V's of Big Data (Neue Fische, 2025)
 </p>
 
 * **Volume**: Pertains to the massive scale of the data, often measured in petabytes and exabytes.
