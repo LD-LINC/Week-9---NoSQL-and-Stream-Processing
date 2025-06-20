@@ -125,3 +125,7 @@ Netflix employs a sophisticated, polyglot persistence strategy to manage data fo
 * **Apache Iceberg**: An open table format used on top of the S3 data lake to manage large analytical datasets, enabling reliable transactions and schema evolution.
 
 This multi-faceted approach enables Netflix to achieve massive scalability, high availability, and the capacity for real-time personalization at a petabyte scale.
+
+**References**
+1. Stiller, Eran. “Netflix Built a Scalable Annotation Service Using Cassandra, Elasticsearch and Iceberg.” InfoQ, 22 Feb. 2023, www.infoq.com/news/2023/02/netflix-annotations-cassandra/?.
+2. Blog, Netflix Technology. “Navigating the Netflix Data Deluge: The Imperative of Effective Data Management.” Medium, 26 Mar. 2024, netflixtechblog.medium.com/navigating-the-netflix-data-deluge-the-imperative-of-effective-data-management-e39af70f81f7.
