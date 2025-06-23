@@ -90,11 +90,11 @@ Stream processing is a method of processing data continuously as it arrives, in 
 
 ---
 
-## 6. Activity
+## 6. Activity - Simple Python Batch Script vs. Kafka Consumer Script
 
-### Objective: 
-
+## Objective:## 
 To illustrate the core differences between batch and stream processing by using Python to simulate sensor data handling—processing a file in batch mode and consuming real-time messages via Kafka. This activity highlights differences in latency, data flow, and responsiveness between the two models.
+
 
 ### Simple Python Batch Script vs. Kafka Consumer Script
 
