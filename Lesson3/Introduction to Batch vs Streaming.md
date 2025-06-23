@@ -92,6 +92,10 @@ Stream processing is a method of processing data continuously as it arrives, in 
 
 ## 6. Activity
 
+### Objective: 
+
+To illustrate the core differences between batch and stream processing by using Python to simulate sensor data handling—processing a file in batch mode and consuming real-time messages via Kafka. This activity highlights differences in latency, data flow, and responsiveness between the two models.
+
 ### Simple Python Batch Script vs. Kafka Consumer Script
 
 Let's illustrate the fundamental difference with simplified Python examples.
@@ -305,8 +309,6 @@ Amazon's success lies in its intelligent combination of both batch and stream pr
 * **Comprehensive Data Insights:** Batch processing provides the historical context and deep analytical capabilities for long-term trends and strategic decisions, while stream processing offers immediate, actionable insights for tactical adjustments and real-time user experiences.
 * **Robustness and Fault Tolerance:** Data is often ingested into streaming systems (like Kafka) first, providing a durable log of events. This allows for reprocessing of data in batch if needed (e.g., for correcting errors or re-running analysis with new logic), providing a safety net.
 * **Scalability:** Both approaches are designed for horizontal scalability, allowing Amazon to handle ever-increasing data volumes and user demands.
-
----
 
 **Conclusion:**
 
