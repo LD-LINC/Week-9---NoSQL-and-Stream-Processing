@@ -1,6 +1,4 @@
-# Batch vs. Stream Processing
-
-## Introduction
+# 1. Introduction to Batch vs. Stream Processing
 
 In the world of data, raw information is rarely useful in its unprocessed form. To extract insights, make decisions, and drive business value, we need to process it.
 
@@ -15,8 +13,9 @@ Data processing is fundamental to almost every business operation. Let's look at
 * **Billing:** Imagine a telecommunications company. Every phone call, every text message, every gigabyte of data consumed generates a record. To accurately bill customers at the end of the month, all these individual records need to be collected, aggregated, and processed to calculate the total usage and charges. This is a classic example of data processing.
 
 * **Dashboarding:** A sales manager needs to see how their team is performing. They want a dashboard showing daily sales figures, top-selling products, and regional performance. This dashboard doesn't just magically appear; it's fed by processed sales data, often aggregated from various sources and transformed into a format suitable for visualization.
+---
 
-## Batch Processing vs Stream Processing
+## 2. Batch Processing vs Stream Processing
 
   <p align="center">
   <img src="L3_Assets/BSP.png" alt="Batch Vs Stream Processing" width="70%" />
@@ -24,7 +23,9 @@ Data processing is fundamental to almost every business operation. Let's look at
  <p align="center">
  Reference: Batch Vs Stream Processing (Design Gurus, NA)
 
-## Batch Processing
+---
+   
+## 3. Batch Processing
 
 ### Definition
 
@@ -48,8 +49,9 @@ Batch processing is a method of processing data in large chunks or "batches" at 
 * **Apache Hadoop:** Hadoop is an open-source framework for distributed storage and processing of very large datasets. Its MapReduce component is a classic example of a batch processing engine, breaking down large problems into smaller, parallelizable tasks.
 * **Apache Spark (Batch mode):** Spark is a powerful unified analytics engine for large-scale data processing. While it can do much more, its core RDD (Resilient Distributed Dataset) API and DataFrame API are extensively used for efficient batch processing of structured and unstructured data.
 * **SQL-based ETL tools (e.g., Talend, Informatica):** These tools are widely used for Extract, Transform, Load (ETL) operations, which are often batch-oriented. They provide graphical interfaces to design data pipelines that move and transform data from various sources into data warehouses or other destinations.
+---
 
-## Stream Processing
+## 4. Stream Processing
 
 ### Definition
 
@@ -74,8 +76,9 @@ Stream processing is a method of processing data continuously as it arrives, in 
 * **Apache Spark Structured Streaming:** Built on the Spark SQL engine, Structured Streaming provides a high-level API for continuous processing of data streams. It allows you to express your streaming computations as if they were batch computations, and Spark handles the incremental execution.
 * **Apache Flink:** Flink is a powerful open-source stream processing framework designed for high-throughput, low-latency, and fault-tolerant stream processing. It's often chosen for very demanding real-time applications.
 * **AWS Kinesis / GCP PubSub:** These are cloud-native managed services that provide similar functionalities to Apache Kafka for building real-time data streaming applications. They abstract away the infrastructure management, making it easier to build scalable streaming solutions in the cloud.
+---
 
-##  Comparison Table
+##  5. Comparison Table
 
 | Feature          | Batch Processing              | Stream Processing             |
 | :--------------- | :---------------------------- | :---------------------------- |
@@ -85,7 +88,9 @@ Stream processing is a method of processing data continuously as it arrives, in 
 | **Processing Style** | Collect then process          | Process as it arrives         |
 | **Data Boundness** | Bounded (finite)              | Unbounded (infinite)          |
 
-## Activity
+---
+
+## 6. Activity
 
 ### Simple Python Batch Script vs. Kafka Consumer Script
 
@@ -234,8 +239,9 @@ if __name__ == "__main__":
 3.  Run: `python stream_consumer.py`
 4.  In a separate terminal, run a Kafka producer (e.g., the conceptual producer code above, or use `kafka-console-producer.sh`).
 
+---
 
-## Case Study: Leveraging Batch and Stream Processing at Amazon Prime Video
+## 7. Case Study: Leveraging Batch and Stream Processing at Amazon Prime Video
 
 **Company:** Amazon
 
@@ -244,7 +250,7 @@ if __name__ == "__main__":
 **Overview:**
 Amazon, a global leader in streaming entertainment, processes an astronomical amount of data daily. This data ranges from user viewing history and UI interactions to system logs and billing information. To effectively manage and leverage this diverse data for personalized recommendations, operational efficiency, and business intelligence, Amazon employs a sophisticated data processing architecture that strategically combines both **batch** and **stream processing**.
 
----
+
 
 **Challenges Faced by Amazon:**
 
@@ -254,7 +260,7 @@ Amazon, a global leader in streaming entertainment, processes an astronomical am
 4.  **Billing & Reporting:** Accurate and timely processing of subscription data for billing, financial reporting, and compliance requires robust and reliable systems.
 5.  **A/B Testing & Experimentation:** Running numerous experiments simultaneously to optimize the user experience demands quick feedback loops on user behavior.
 
----
+
 
 **How Amazon Utilizes Batch Processing:**
 
@@ -272,7 +278,7 @@ Amazon, a global leader in streaming entertainment, processes an astronomical am
     * **Apache Spark (Batch Mode):** For high-performance batch processing and complex data transformations.
     * **Custom-built data pipelines:** Designed for specific batch workloads.
 
----
+
 
 **How Amazon Utilizes Stream Processing:**
 
@@ -289,7 +295,7 @@ Amazon, a global leader in streaming entertainment, processes an astronomical am
     * **Apache Kafka:** Used as a highly scalable and fault-tolerant distributed streaming platform for ingesting and publishing real-time event data. It acts as the central nervous system for many of their streaming pipelines.
     * **Apache Flink / Apache Samza:** These are stream processing engines that consume data from Kafka (or similar message brokers) and perform real-time transformations, aggregations, and computations. 
    
----
+
 
 **Synergy and Benefits of the Hybrid Approach:**
 
