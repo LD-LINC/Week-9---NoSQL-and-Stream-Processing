@@ -70,7 +70,7 @@ Stream processing is a method of processing data continuously as it arrives, in 
 
 ### Tools:
 
-* **Apache Kafka :** Kafka is a distributed streaming platform that acts as a high-throughput, fault-tolerant message broker. It's not a processing engine itself but is fundamental for building stream processing applications as it efficiently collects and delivers data streams to processing engines.
+* **Apache Kafka:** Kafka is a distributed streaming platform that acts as a high-throughput, fault-tolerant message broker. It's not a processing engine itself but is fundamental for building stream processing applications as it efficiently collects and delivers data streams to processing engines.
 * **Apache Spark Structured Streaming:** Built on the Spark SQL engine, Structured Streaming provides a high-level API for continuous processing of data streams. It allows you to express your streaming computations as if they were batch computations, and Spark handles the incremental execution.
 * **Apache Flink:** Flink is a powerful open-source stream processing framework designed for high-throughput, low-latency, and fault-tolerant stream processing. It's often chosen for very demanding real-time applications.
 * **AWS Kinesis / GCP PubSub:** These are cloud-native managed services that provide similar functionalities to Apache Kafka for building real-time data streaming applications. They abstract away the infrastructure management, making it easier to build scalable streaming solutions in the cloud.
@@ -98,7 +98,7 @@ Let's illustrate the fundamental difference with simplified Python examples.
 Here, we'll simulate collecting all "daily" readings into a file and then processing them all at once.
 
 
-```
+```python
 # batch_processor.py
 import time
 
@@ -150,7 +150,7 @@ if __name__ == "__main__":
 This requires a running Kafka instance (which is beyond a simple Python script demo) but shows the concept. We'll use the `kafka-python` library.
 
 **Prerequisites (Kafka running):**
-```
+```python
 # stream_consumer.py
 from kafka import KafkaConsumer
 import json
