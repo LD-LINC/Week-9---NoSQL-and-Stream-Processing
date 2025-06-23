@@ -19,7 +19,7 @@ Data processing is fundamental to almost every business operation. Let's look at
 ## Batch Processing vs Stream Processing
 
   <p align="center">
-  <img src="L3_Assets/BSP.png" alt="Batch Vs Stream Processing" width="60%" />
+  <img src="L3_Assets/BSP.png" alt="Batch Vs Stream Processing" width="70%" />
 </p>
  <p align="center">
  Reference: Batch Vs Stream Processing (Design Gurus, NA)
