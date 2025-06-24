@@ -1,5 +1,5 @@
 
-# **1. Introduction to Big Data Storage**
+# Lesson 3: Introduction to Big Data Storage
 
 The exponential growth of data generated from digital sources such as applications, IoT devices, social media, and transactional systems presents a significant engineering challenge. The effective storage of this "big data" is a critical foundation for any data-driven organization.
 
