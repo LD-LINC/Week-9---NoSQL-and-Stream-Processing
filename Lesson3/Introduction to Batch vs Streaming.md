@@ -1,4 +1,4 @@
-# 1. Introduction to Batch vs. Stream Processing
+# Lesson 3: Introduction to Batch vs. Stream Processing
 
 In the world of data, raw information is rarely useful in its unprocessed form. To extract insights, make decisions, and drive business value, we need to process it.
 
