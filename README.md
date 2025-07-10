@@ -22,7 +22,7 @@ Proficiency in Python is crucial as it will be the primary language used for scr
 Resource: https://www.w3schools.com/python/ 
 
 
-### 🗄️ SQL (Structured Query Language)
+### SQL (Structured Query Language)
 
 While this week focuses on NoSQL databases, a strong understanding of SQL and relational database concepts is a critical prerequisite. This knowledge provides a baseline for comparison and helps you appreciate the problems NoSQL technologies are designed to solve.
 
