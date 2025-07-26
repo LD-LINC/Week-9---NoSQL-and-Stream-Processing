@@ -162,13 +162,13 @@ Although not part of the core Apache Kafka project, the **Schema Registry**—av
 
 The Schema Registry is essential for teams managing structured data, ensuring safe and consistent data exchange between services.
 
+---
+
 ## 3. Kafka Setup & CLI
 
 Now that you’ve learned about Kafka’s architecture and supporting tools, let’s walk through setting up Kafka locally and running it using the command line.
 
 This hands-on section is ideal for development, experimentation, and understanding how Kafka works behind the scenes.
-
----
 
 ### Kafka Setup Workflow (Visual Overview)
 
@@ -190,8 +190,6 @@ You can verify your Java installation with:
 java -version
 ```
 
----
-
 ### Downloading and Extracting Kafka
 
 1. **Download:** [Visit the official Apache Kafka website](https://kafka.apache.org/downloads)
@@ -208,8 +206,6 @@ cd kafka_2.13-3.x.x
 
 Let’s assume you're in the extracted Kafka directory for the next steps.
 
----
-
 ### A. Starting ZooKeeper
 
 Kafka traditionally uses **ZooKeeper** for coordination tasks. You’ll need to start it before launching Kafka.
@@ -219,8 +215,6 @@ bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
 
 This will start ZooKeeper and stream logs in the terminal. Leave this window open.
-
----
 
 ### B. Starting Kafka Broker
 
@@ -232,13 +226,10 @@ bin/kafka-server-start.sh config/server.properties
 
 Once you see a message like `[KafkaServer id=0] started`, the broker is running successfully.
 
----
 
 ### C. Basic CLI Commands
 
 Let’s explore how to work with Kafka using its command-line interface.
-
----
 
 #### Creating Topics
 
@@ -250,7 +241,6 @@ bin/kafka-topics.sh --create --topic my_first_topic --bootstrap-server localhost
 
 For single-broker setups, keep the replication factor as `1`.
 
----
 
 #### Listing Topics
 
@@ -262,7 +252,6 @@ bin/kafka-topics.sh --list --bootstrap-server localhost:9092
 
 You should see `my_first_topic` listed.
 
----
 
 #### Producing Messages
 
@@ -282,8 +271,6 @@ Type your messages and press Enter after each:
 
 Press `Ctrl+C` to stop the producer.
 
----
-
 #### Consuming Messages
 
 To read messages from the topic, use the Kafka console consumer.
@@ -302,8 +289,6 @@ Learning Kafka is fun!
 
 Keep this window open to see new messages in real-time. Press `Ctrl+C` to exit.
 
----
-
 #### Deleting Topics
 
 You can delete a topic after enabling deletion in the Kafka config:
@@ -319,6 +304,71 @@ bin/kafka-topics.sh --delete --topic my_first_topic --bootstrap-server localhost
 ```
 
 Kafka will mark the topic for deletion.
+
+### Apache Kafka Installation using Docker
+
+This guide helps you set up **Apache Kafka** using Docker with the help of **Confluent Platform** or **Bitnami images**.
+
+
+#### Use Confluent Kafka Docker Images
+
+##### 🔧 Prerequisites (Alredy covered in Week 3)
+
+- Docker installed
+- Docker Compose installed
+
+##### Create a `docker-compose.yml` File
+
+```yaml
+version: '2'
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+```
+
+##### Start Kafka
+
+```bash
+docker-compose up -d
+```
+
+#####  Verify Installation
+
+```bash
+docker ps
+```
+You should see cp-kafka and cp-zookeeper containers running.
+
+##### Test Kafka with CLI
+You can use the Kafka console producer/consumer via a new Docker container:
+
+Create a topic
+```bash
+docker exec -it <kafka_container_id> kafka-topics --create --topic test-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+```
+Produce message
+```bash
+docker exec -it <kafka_container_id> kafka-console-producer --broker-list localhost:9092 --topic test-topic
+```
+Consume message
+```bash
+docker exec -it <kafka_container_id> kafka-console-consumer --bootstrap-server localhost:9092 --topic test-topic --from-beginning
+```
 
 ---
 
