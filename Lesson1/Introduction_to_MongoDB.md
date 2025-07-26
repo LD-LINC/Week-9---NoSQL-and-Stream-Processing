@@ -45,6 +45,97 @@ These are the fundamental building blocks of data in MongoDB:
 * **Collections:** Groups of documents. They are analogous to tables in relational databases but do not enforce a rigid schema. All documents within a collection typically serve a similar purpose (e.g., a `users` collection contains user documents).
 
 ---
+## MongoDB Installation Guide
+
+This section explains how to install MongoDB on **Windows**, **macOS**, and via **Docker** for quick local development.
+
+
+### Install MongoDB on Windows
+
+#### 1. Download MongoDB
+- Go to the [MongoDB Community Download Center](https://www.mongodb.com/try/download/community).
+- Select:
+  - **Version**: Latest
+  - **OS**: Windows
+  - **Package**: MSI
+
+#### 2. Run the Installer
+- Launch the downloaded `.msi` file.
+- Choose **Complete** installation.
+- Ensure **"Install MongoDB as a Service"** is selected.
+- Optionally install **MongoDB Compass** (GUI).
+
+#### 3. Verify Installation
+```bash
+mongod --version
+mongo --version
+```
+
+#### 4. Default Paths
+Binaries: C:\Program Files\MongoDB\Server\<version>\bin
+
+Data Directory (create if not exists): C:\data\db
+
+#### 4. Start MongoDB
+Start MongoDB server
+mongod
+In another terminal, connect to MongoDB shell
+mongo
+
+### Install MongoDB on macOS
+
+#### 1. Install via Homebrew
+
+```bash
+brew tap mongodb/brew
+brew install mongodb-community
+```
+
+#### 2.Start MongoDB Service
+```bash
+brew services start mongodb-community
+```
+
+#### 2.Verify Installation
+```bash
+mongod --version
+mongo --version
+```
+
+#### 2.Connect to MongoDB Shell
+```bash
+mongo
+```
+
+### Install MongoDB using Docker
+
+#### 1. Pull MongoDB Image
+
+Download the latest MongoDB image from Docker Hub:
+
+```bash
+docker pull mongo
+```
+
+#### 2. Run MongoDB Container
+
+Start a MongoDB container with a custom name and exposed port:
+
+```bash
+docker run --name mongodb-container -d -p 27017:27017 mongo
+```
+This command:
+Names the container mongodb-container
+Runs it in detached mode (-d)
+Maps port 27017 of the host to container
+
+#### 2. Connect to MongoDB Shell Inside Container
+
+```bash
+docker exec -it mongodb-container mongosh
+```
+
+---
 
 ## 1.1. CRUD Operations in MongoDB
 <p align="center">
