@@ -157,13 +157,7 @@ An **index** is a special data structure that stores a small, ordered portion of
 ### Understanding the Aggregation Framework
 
 <p align="center">
-   
-![ETL Pipeline](L1_Assets/Aggregation_framework_mongodb.png)
-
-</p>
-
-<p align="center">
-Reference: geeksforgeeks.com (2024). Aggregation in MongoDB.
+  <img src="L1_Assests/Aggregation_framework_mongodb.png" alt="Core Concept" width="60%" />
 </p>
 
 **Aggregation** processes data records and returns computed results. It's used to group values, perform calculations (sums, averages, counts), and transform documents.
