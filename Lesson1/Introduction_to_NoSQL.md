@@ -111,6 +111,80 @@ Source: Graph Database (Neue Fische, 2025)
 * **Use Cases:** Perfect for **social networks, recommendation engines, fraud detection, and knowledge graphs** where understanding complex interconnections is key.
 * **Neo4j at eBay:** eBay uses Neo4j to power its knowledge graph that helps detect relationships between entities like products, categories, and search queries. This graph model improves search relevance and recommendation quality in a large and dynamic marketplace.
 
+### E. Neo4j: Graph Database Overview
+
+#### What is Neo4j?
+
+Neo4j is a **native graph database** designed to store, manage, and query highly connected data using a flexible graph structure of nodes, relationships, and properties.
+
+- **Nodes** represent entities (e.g., people, products)
+- **Relationships** represent connections (e.g., FRIEND_OF, PURCHASED)
+- **Properties** store key-value pairs on both nodes and relationships
+
+#### Key Features
+
+- **Cypher Query Language** (SQL-like syntax for graph operations)
+- **ACID Compliance**
+- **High Performance for Connected Data**
+- **Flexible Schema**
+- **Built-in Visualization UI**
+
+#### Common Use Cases
+
+- Social Networks
+- Recommendation Engines
+- Fraud Detection
+- Knowledge Graphs
+- Network and IT Operations
+
+#### Installation Options
+
+**Neo4j Desktop (GUI)**
+- Download from: [https://neo4j.com/download](https://neo4j.com/download)
+- Great for local development and visual data modeling
+
+---
+
+### Neo4j Hands-on Activity 1: Import & Explore Data from JSON
+
+#### Objective
+
+In this activity, you will:
+- Import sample data from a JSON-like format
+- Create nodes and relationships in Neo4j
+- Run basic Cypher queries to explore the graph
+
+
+## Sample Data (People & Friendships)
+
+Use sample data neo4j_input.json provided in L1_Assests folder.
+
+### Step 1: Create Nodes and Relationships
+Using Cypher (Manually Creating Data)
+```
+CREATE (a:Person {name: "Alice", age: 30})
+CREATE (b:Person {name: "Bob", age: 25})
+CREATE (c:Person {name: "Charlie", age: 28})
+
+CREATE (a)-[:FRIEND_WITH]->(b)
+CREATE (a)-[:FRIEND_WITH]->(c)
+CREATE (b)-[:FRIEND_WITH]->(a)
+```
+
+### Step 2: Query the Graph
+Find All People
+```
+MATCH (p:Person)
+RETURN p.name, p.age
+```
+
+### Step 3:Find Friendships
+```
+MATCH (a:Person)-[:FRIEND_WITH]->(b:Person)
+RETURN a.name, "is friends with", b.name
+```
+
+
 ---
 
 ## 1.2. Core Features of NoSQL Databases 
