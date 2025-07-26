@@ -155,6 +155,17 @@ An **index** is a special data structure that stores a small, ordered portion of
 * **Dropping Indexes:** `db.<collection_name>.dropIndex("<index_name>")`
 
 ### Understanding the Aggregation Framework
+
+<p align="center">
+   
+![ETL Pipeline](L1_Assets/Aggregation_framework_mongodb.png)
+
+</p>
+
+<p align="center">
+Reference: geeksforgeeks.com (2024). Aggregation in MongoDB.
+</p>
+
 **Aggregation** processes data records and returns computed results. It's used to group values, perform calculations (sums, averages, counts), and transform documents.
 * **The Aggregation Pipeline:** A series of data processing **stages**. Documents flow through these stages, where each stage performs an operation (e.g., filtering, grouping, reshaping) and passes its output to the next stage. This allows for powerful and flexible data transformations.
 
