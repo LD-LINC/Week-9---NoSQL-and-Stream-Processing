@@ -332,7 +332,7 @@ GlobalConnect's experience underscores MongoDB's power as a key enabler for mode
 
 **Objective:** This activity will further develop your aggregation skills by combining multiple pipeline stages to derive meaningful insights from the dataset.
 
-**Instructions:** [Download Movie Dataset CSV](./L1_Assests/Movie%20Dataset.csv)
+**Instructions:** Use Same dataset used in Activity 1.
 
 **A. Directors by Average Rotten Tomatoes Score (Top 3):**
  - Calculate the average Rotten Tomatoes rating for each director.
