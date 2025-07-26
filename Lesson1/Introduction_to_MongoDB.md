@@ -20,6 +20,7 @@ MongoDB addresses these limitations:
 Understanding MongoDB's core components is essential:
 <p align="center">
   <img src="L1_Assests/MongoDB Architecture & Ecosystem - visual selection.png" alt="Core Concept" width="60%" />
+  <reference: mongodb.com /resources/products/fundamentals/crud>
 </p>
 
 * **Mongod:** The primary database process that handles data requests, manages storage, and performs core database operations. This is the server.
@@ -48,7 +49,9 @@ These are the fundamental building blocks of data in MongoDB:
 ## 1.1. CRUD Operations in MongoDB
 <p align="center">
   <img src="L1_Assests/CRUD.png" alt="Core Concept" width="60%" />
+  <reference: mongodb.com /resources/products/fundamentals/crud>
 </p>
+    
 ### Connecting to MongoDB (via Mongo Shell)
 Before performing operations, connect to your MongoDB instance:
 * Open your terminal and type `mongo` to open the shell.
