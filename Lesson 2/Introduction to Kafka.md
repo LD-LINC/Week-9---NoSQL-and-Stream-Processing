@@ -264,7 +264,48 @@ Check the [Confluent Pricing](https://www.confluent.io/confluent-cloud/pricing/)
 
 ---
 
-## 3. Kafka Setup & CLI
+## 4. Zookeeper vs. KRaft Mode in Apache Kafka
+
+### Background
+
+Historically, **Apache Kafka** has used **Zookeeper** for metadata management, broker coordination, and leader election. However, starting with **Kafka 2.8**, and more formally in **Kafka 3.x+,** the community has introduced **KRaft** (Kafka Raft Metadata mode) to eventually replace Zookeeper.
+
+### What is KRaft?
+
+**KRaft** stands for **Kafka Raft** and is a consensus protocol integrated directly into Kafka brokers. It eliminates the need for an external Zookeeper cluster by embedding metadata management within Kafka itself.
+
+#### Benefits of KRaft Mode
+
+- Simplified architecture (no external Zookeeper dependency)
+- Faster startup and failover
+- Easier deployment and scaling
+- Unified operational model
+
+
+### Current Recommendation
+
+As of the latest Kafka releases:
+
+- **KRaft mode** is **production-ready** and recommended for **new Kafka clusters**
+- **Zookeeper** is still widely used in **existing production deployments**
+- **Migration** from Zookeeper-based clusters to KRaft is **possible but requires planning**
+
+
+### Recommendation for Documentation
+
+Since many organizations continue to run Kafka with Zookeeper in production, it's important to retain **Zookeeper setup instructions** for backward compatibility. However, it's equally important to include a **note or section on KRaft mode** for modern and future-proof deployments.
+
+
+### Suggested Action
+
+- Retain existing **Zookeeper instructions** for legacy support
+- Add a **"KRaft Mode (Zookeeper-less)"** section to reflect the latest development
+- Briefly mention **migration strategies** or link to the [official Apache Kafka migration guide](https://kafka.apache.org/documentation/#kraft)
+
+
+---
+
+## 5. Kafka Setup & CLI
 
 Now that you’ve learned about Kafka’s architecture and supporting tools, let’s walk through setting up Kafka locally and running it using the command line.
 
@@ -491,7 +532,7 @@ docker exec -it <kafka_container_id> kafka-console-consumer --bootstrap-server l
 </div>
 
 ---
-## 4. Kafka with Python
+## 6. Kafka with Python
 
 Now that you've interacted with Kafka using the command line, let's take the next step: integrating Kafka into a Python application.
 
@@ -651,7 +692,7 @@ For production setups with stricter data governance, consider using **Avro or Pr
 
 </div>
 
-## 5. Security, Monitoring & Tuning
+## 7. Security, Monitoring & Tuning
 
 Once you move beyond local development, these aspects become critical for a production-ready Kafka cluster. In real-world deployments, securing your Kafka ecosystem, monitoring its performance, and fine-tuning its behaviour are essential for reliability, efficiency, and data integrity.
 
@@ -765,7 +806,7 @@ Kafka is disk- and memory-intensive. OS-level tuning can significantly affect pe
 
 ---
 
-## 6. Case Studies
+## 8. Case Studies
 
 Kafka's versatility has led to widespread adoption across industries—from tech giants to banks—serving as the backbone for real-time, resilient data pipelines. Here are some notable examples that demonstrate its scalability, performance, and flexibility.
 
@@ -810,7 +851,7 @@ Uber relies on Kafka for its dynamic, data-driven operations at global scale.
 
 ---
 
-## 7. Conclusion
+## 9. Conclusion
 
 These real-world case studies showcase how Kafka enables organisations to build systems that are:
 
@@ -827,7 +868,7 @@ These case studies highlight Kafka's flexibility and power as a central nervous 
 
 ---
 
-## 8. Activities
+## 10. Activities
 
 ### Activity 1. Real-Time Temperature Sensor Stream
 
