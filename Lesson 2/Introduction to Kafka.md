@@ -35,6 +35,10 @@ Kafka's popularity stems from its ability to address common challenges in data i
 ## 1.1. Kafka Core Concepts & Architecture
 
 Understanding Kafka's core concepts is crucial for effective utilization.
+<p align="center">
+  <img src="L2_Assests/kafka_architecture.png" alt="Benefits of Kafka" width="80%" />
+</p>
+
 
 ### Distributed Commit Log
 
