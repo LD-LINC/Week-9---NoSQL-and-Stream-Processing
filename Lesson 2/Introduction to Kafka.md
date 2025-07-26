@@ -805,8 +805,91 @@ Kafka is disk- and memory-intensive. OS-level tuning can significantly affect pe
 > Tuning is an **iterative process**. Always benchmark changes in a staging environment before deploying to production.
 
 ---
+## 8. ksqlDB (KSQL) - Streaming SQL for Apache Kafka
 
-## 8. Case Studies
+### What is ksqlDB?
+
+**ksqlDB** is a database purpose-built for stream processing applications using **Apache Kafka**. It allows you to write SQL-like queries to process and transform real-time data streams without writing Java or Scala code.
+
+
+### Key Features
+
+- **Stream Processing with SQL**: Create streaming transformations, joins, filters, aggregations, and windowing using SQL.
+- **Materialized Views**: Queryable tables that continuously reflect the latest state of the stream.
+- **Event-Driven Applications**: Build applications that react to data as it flows through Kafka.
+- **Integration with Kafka Topics**: Reads from and writes to Kafka topics directly.
+- **REST API** for management and querying.
+
+
+### Example Use Cases
+
+- Real-time fraud detection
+- Monitoring IoT sensor data
+- Website activity tracking
+- Real-time analytics dashboards
+- Log and clickstream processing
+
+
+### Basic Concepts
+
+#### Streams
+
+An **append-only sequence of events**. Similar to a Kafka topic.
+
+```sql
+CREATE STREAM orders (
+  order_id VARCHAR,
+  amount DOUBLE
+) WITH (
+  KAFKA_TOPIC='orders',
+  VALUE_FORMAT='JSON'
+);
+```
+
+#### Tables
+
+A stateful representation of the latest value per key.
+
+```sql
+CREATE TABLE inventory (
+  product_id VARCHAR PRIMARY KEY,
+  stock_count INT
+) WITH (
+  KAFKA_TOPIC='inventory',
+  VALUE_FORMAT='JSON'
+);
+```
+
+### Deployment Options
+
+Confluent Cloud
+Self-Managed on Docker or Kubernetes
+Embedded in Java Applications
+
+### Supported Formats
+
+- JSON  
+- Avro  
+- Protobuf  
+- Delimited (CSV)  
+
+
+###  Security
+
+- Role-based access control (RBAC)  
+- TLS encryption  
+- API key-based authentication (in Confluent Cloud)  
+
+
+### Monitoring & Observability
+
+- ksqlDB UI for interactive queries  
+- REST API for metrics and query status  
+- Logs and metrics integration with monitoring tools  
+
+---
+
+## 9. Case Studies
 
 Kafka's versatility has led to widespread adoption across industries—from tech giants to banks—serving as the backbone for real-time, resilient data pipelines. Here are some notable examples that demonstrate its scalability, performance, and flexibility.
 
@@ -851,7 +934,7 @@ Uber relies on Kafka for its dynamic, data-driven operations at global scale.
 
 ---
 
-## 9. Conclusion
+## 10. Conclusion
 
 These real-world case studies showcase how Kafka enables organisations to build systems that are:
 
@@ -868,7 +951,7 @@ These case studies highlight Kafka's flexibility and power as a central nervous 
 
 ---
 
-## 10. Activities
+## 11. Activities
 
 ### Activity 1. Real-Time Temperature Sensor Stream
 
