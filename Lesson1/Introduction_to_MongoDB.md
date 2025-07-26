@@ -46,7 +46,9 @@ These are the fundamental building blocks of data in MongoDB:
 ---
 
 ## 1.1. CRUD Operations in MongoDB
-
+<p align="center">
+  <img src="L1_Assests/CRUD.png" alt="Core Concept" width="60%" />
+</p>
 ### Connecting to MongoDB (via Mongo Shell)
 Before performing operations, connect to your MongoDB instance:
 * Open your terminal and type `mongo` to open the shell.
